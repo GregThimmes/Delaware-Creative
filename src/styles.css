@@ -325,9 +325,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .agency-logo { display: inline-flex; align-items: center; gap: 17px; color: var(--foreground); }
 .connection-logo { display: block; object-fit: contain; flex-shrink: 0; }
 .agency-logo > .connection-logo { width: 70px; height: 76px; }
-.agency-logo-name { display: flex; flex-direction: column; font-family: var(--font-display); font-weight: 600; font-size: 29px; line-height: 1.06; }
-.agency-logo-name > span:last-child { color: var(--orange); }
-.logo-period { color: var(--primary); }
+.agency-logo-name { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; width: 162px; }
+.agency-logo-name img { display: block; width: 100%; object-fit: contain; }
+.logo-delaware { aspect-ratio: 645 / 135; }
+.logo-creative { aspect-ratio: 640 / 202; }
 .rail-connection { width: 23px; height: 25px; }
 .section-connection { width: 25px; height: 27px; margin-right: 5px; }
 .connected-process > div { position: relative; }
@@ -343,14 +344,14 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .signature-connection { width: 22px; height: 24px; margin-inline: 3px; }
 .agency-logo-compact { gap: 10px; }
 .agency-logo-compact > .connection-logo { width: 34px; height: 38px; }
-.agency-logo-compact .agency-logo-name { font-size: 16px; }
+.agency-logo-compact .agency-logo-name { width: 95px; gap: 2px; }
 .mobile-nav { top: 100%; }
 @media(min-width: 768px) and (max-width: 1023px) {
   .header-layout { gap: 18px; }
   .header-layout nav { gap: 20px; }
   .agency-logo { gap: 13px; }
   .agency-logo > .connection-logo { width: 57px; height: 64px; }
-  .agency-logo-name { font-size: 25px; }
+  .agency-logo-name { width: 140px; }
   .nav-link { font-size: 12px; }
   .about-layout { gap: 40px; }
   .connected-heading { gap: 15px; }
@@ -361,12 +362,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   .site-header { height: 100px; }
   .agency-logo { gap: 14px; }
   .agency-logo > .connection-logo { width: 54px; height: 62px; }
-  .agency-logo-name { font-size: 25px; }
+  .agency-logo-name { width: 140px; }
   .header-layout { gap: 12px; }
   .connected-process > div:not(:last-child)::after { display: none; }
   .connected-heading { gap: 17px; }
   .about-connection { width: 59px; height: 69px; }
   .connected-heading .section-title { font-size: 27px; }
   .agency-logo-compact > .connection-logo { width: 34px; height: 38px; }
-  .agency-logo-compact .agency-logo-name { font-size: 16px; }
+  .agency-logo-compact .agency-logo-name { width: 95px; }
 }
