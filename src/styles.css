@@ -234,7 +234,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .hero-copy { animation: enter .8s ease-out both; }
 @media(min-width: 1600px) { .hero-art { object-position: center 55%; } }
 @media(min-width: 768px) and (max-width: 1023px) {
-  .hero h1 { font-size: 48px; }
+  .hero .hero-copy h1 { font-size: 48px; }
   .hero .hero-copy { max-width: 405px; padding-top: 65px; padding-bottom: 70px; }
 }
 @media(max-width: 1023px) { .site-wrap { padding-inline: 30px; } .hero h1 { font-size: 60px; } .hero-art { object-position: 56% center; } .hero-copy { max-width: 490px; } .service-card { padding: 23px; } .project-stage { padding: 25px 20px 0; } }
