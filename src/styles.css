@@ -317,3 +317,56 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   .service-grid { gap: 30px; }
   .service-card { padding: 24px 0 0; }
 }
+
+/* Connected D/C brand system. */
+.site-header { height: 114px; }
+.header-layout { display: flex; height: 100%; align-items: center; justify-content: space-between; gap: 28px; }
+.header-logo-link { flex-shrink: 0; }
+.agency-logo { display: inline-flex; align-items: center; gap: 17px; color: var(--foreground); }
+.connection-logo { display: block; object-fit: contain; flex-shrink: 0; }
+.agency-logo > .connection-logo { width: 70px; height: 76px; }
+.agency-logo-name { display: flex; flex-direction: column; font-family: var(--font-display); font-weight: 600; font-size: 29px; line-height: 1.06; }
+.agency-logo-name > span:last-child { color: var(--orange); }
+.logo-period { color: var(--primary); }
+.rail-connection { width: 23px; height: 25px; }
+.section-connection { width: 25px; height: 27px; margin-right: 5px; }
+.connected-process > div { position: relative; }
+.connected-process .process-number { border-bottom: 2px solid var(--primary); position: relative; }
+.connected-process > div:nth-child(2) .process-number { border-color: var(--orange); }
+.connected-process .process-number::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); position: absolute; bottom: -5px; left: 0; }
+.connected-process > div:nth-child(2) .process-number::before { background: var(--orange); }
+.connected-process > div:not(:last-child)::after { content: ''; position: absolute; width: 40px; height: 28px; border-top: 2px solid var(--primary); border-right: 2px solid var(--primary); border-radius: 0 16px 0 0; right: -40px; top: 38px; }
+.connected-process > div:nth-child(2)::after { border-color: var(--orange); }
+.connected-heading { display: flex; align-items: center; gap: 25px; }
+.about-connection { width: 80px; height: 90px; }
+.connected-heading .section-title { font-size: 36px; }
+.signature-connection { width: 22px; height: 24px; margin-inline: 3px; }
+.agency-logo-compact { gap: 10px; }
+.agency-logo-compact > .connection-logo { width: 34px; height: 38px; }
+.agency-logo-compact .agency-logo-name { font-size: 16px; }
+.mobile-nav { top: 100%; }
+@media(min-width: 768px) and (max-width: 1023px) {
+  .header-layout { gap: 18px; }
+  .header-layout nav { gap: 20px; }
+  .agency-logo { gap: 13px; }
+  .agency-logo > .connection-logo { width: 57px; height: 64px; }
+  .agency-logo-name { font-size: 25px; }
+  .nav-link { font-size: 12px; }
+  .about-layout { gap: 40px; }
+  .connected-heading { gap: 15px; }
+  .about-connection { width: 55px; height: 65px; }
+  .connected-heading .section-title { font-size: 28px; }
+}
+@media(max-width: 767px) {
+  .site-header { height: 100px; }
+  .agency-logo { gap: 14px; }
+  .agency-logo > .connection-logo { width: 54px; height: 62px; }
+  .agency-logo-name { font-size: 25px; }
+  .header-layout { gap: 12px; }
+  .connected-process > div:not(:last-child)::after { display: none; }
+  .connected-heading { gap: 17px; }
+  .about-connection { width: 59px; height: 69px; }
+  .connected-heading .section-title { font-size: 27px; }
+  .agency-logo-compact > .connection-logo { width: 34px; height: 38px; }
+  .agency-logo-compact .agency-logo-name { font-size: 16px; }
+}
