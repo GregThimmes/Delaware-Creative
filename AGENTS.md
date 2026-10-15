@@ -14,5 +14,6 @@
 - Use global semantic design tokens and the shared Button variants for presentation; this keeps branding consistent.
 - Keep decorative agency annotations browser-safe, non-interactive, and hidden from assistive technology; they enhance the imagery without implying live AI functionality.
 - Render logos through AgencyLogo and ConnectionLogo; shared symbol and transparent original wordmark assets preserve exact brand lettering consistently.
+- Keep the wordmark on one horizontal line (symbol, then "Delaware" and "Creative." side by side on a shared baseline); scale the whole lockup with the single --logo-d variable rather than per-part sizes.
 - Label sample project designs as concepts, and do not claim them as completed client work.
 - Contact inquiry drafts are client-side and not sent or stored; a real recipient must be supplied before enabling delivery.
