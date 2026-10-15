@@ -13,5 +13,6 @@
 - Keep this business website as a single index route with anchored sections; the requested experience is one page.
 - Use global semantic design tokens and the shared Button variants for presentation; this keeps branding consistent.
 - Keep decorative agency annotations browser-safe, non-interactive, and hidden from assistive technology; they enhance the imagery without implying live AI functionality.
+- Render the logo through the shared AgencyLogo and ConnectionLogo components; one symbol asset and live lettering keep navigation legible and repeated brand details consistent.
 - Label sample project designs as concepts, and do not claim them as completed client work.
 - Contact inquiry drafts are client-side and not sent or stored; a real recipient must be supplied before enabling delivery.
