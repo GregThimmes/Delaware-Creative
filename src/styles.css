@@ -156,7 +156,9 @@
   --coastal: oklch(0.27 0.025 255);
   --cafe: oklch(0.28 0.025 50);
   --about-surface: oklch(0.25 0.025 255);
-  --hero-shade: linear-gradient(90deg, var(--studio-surface) 0%, color-mix(in oklch, var(--studio-surface) 95%, transparent) 30%, transparent 72%);
+  --hero-shade: linear-gradient(90deg, var(--studio-surface) 0%, color-mix(in oklch, var(--studio-surface) 95%, transparent) 34%, transparent 72%);
+  --signal-surface: color-mix(in oklch, var(--ink) 90%, transparent);
+  --signal-line: color-mix(in oklch, var(--primary) 65%, transparent);
   --project-shadow: 0 22px 45px oklch(0.08 0.005 255 / 0.4);
 }
 @theme inline {
@@ -248,3 +250,70 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   .hero-bottom { min-height: 54px; }
 }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Agency art direction: creative selection marks and quiet AI signals. */
+.hero { min-height: 610px; }
+.hero-copy { max-width: 620px; padding-top: 68px; padding-bottom: 65px; }
+.hero h1 { font-size: 57px; line-height: 1.08; }
+.hero-statement { display: block; margin-top: 16px; font-size: 64px; }
+.hero-description { max-width: 380px; }
+.agency-art-notes { position: absolute; z-index: 2; top: 0; bottom: 66px; left: 57%; right: 7%; pointer-events: none; }
+.design-selection { position: absolute; inset: 23% 0 26%; border: 1px solid var(--signal-line); }
+.selection-label { position: absolute; top: -29px; left: -1px; display: flex; align-items: center; gap: 7px; padding: 6px 9px; background: var(--primary); color: var(--primary-foreground); font-size: 10px; font-family: var(--font-sans); }
+.design-selection i { position: absolute; width: 6px; height: 6px; background: var(--foreground); border: 1px solid var(--primary); }
+.design-selection i:nth-of-type(1) { top: -3px; left: -3px; }
+.design-selection i:nth-of-type(2) { top: -3px; right: -3px; }
+.design-selection i:nth-of-type(3) { bottom: -3px; left: -3px; }
+.design-selection i:nth-of-type(4) { bottom: -3px; right: -3px; }
+.code-note, .ai-note { position: absolute; display: flex; align-items: center; gap: 9px; background: var(--signal-surface); border: 1px solid var(--border); padding: 12px 15px; font-size: 11px; }
+.code-note { right: -20px; bottom: 16%; color: var(--muted-foreground); font-family: monospace; }
+.code-note > svg { color: var(--primary); }
+.ai-note { top: 11%; right: 0; border-color: var(--signal-line); }
+.ai-note > svg { color: var(--orange); }
+.signal-pulse { height: 5px; width: 5px; background: var(--mint); border-radius: 50%; animation: signal 3s ease-in-out infinite; }
+@keyframes signal { 50% { opacity: .35; } }
+.capability-rail { background: var(--card); border-block: 1px solid var(--border); }
+.capability-rail .site-wrap { display: grid; grid-template-columns: repeat(4, 1fr); padding-block: 23px; gap: 20px; }
+.capability-rail span { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 12px; color: var(--muted-foreground); }
+.capability-rail svg { color: var(--primary); }
+.capability-rail .rail-ai svg { color: var(--orange); }
+.service-card { background: transparent; border-width: 1px 0 0; border-radius: 0; padding: 28px 0 0; }
+.service-card:hover { transform: none; }
+.service-icon { background: transparent; padding: 0; border-radius: 0; }
+.service-card:nth-child(2) .service-icon { color: var(--orange); }
+.service-index { color: var(--muted-foreground); font-family: monospace; font-size: 11px; }
+.service-card h3 { max-width: 270px; font-size: 24px; }
+.about-band { background: var(--studio-surface); position: relative; }
+.agency-signature { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; border-top: 1px solid var(--border); padding-top: 22px; margin-top: 25px; color: var(--muted-foreground); font-size: 11px; }
+.agency-signature svg { color: var(--primary); }
+@media(min-width: 768px) and (max-width: 1023px) {
+  .hero { min-height: 570px; }
+  .hero .hero-copy { max-width: 420px; padding-top: 62px; padding-bottom: 60px; }
+  .hero .hero-copy h1 { font-size: 39px; }
+  .hero-statement { font-size: 52px; }
+  .hero-description { max-width: 340px; }
+  .agency-art-notes { left: 60%; right: 5%; }
+  .ai-note { font-size: 10px; padding: 9px; }
+  .code-note { right: 0; font-size: 9px; padding: 10px; }
+  .capability-rail .site-wrap { gap: 12px; }
+  .capability-rail span { font-size: 10px; gap: 7px; }
+  .service-card h3 { font-size: 21px; }
+}
+@media(max-width: 767px) {
+  .hero { min-height: 0; }
+  .hero-copy { padding-top: 42px; padding-bottom: 255px; }
+  .hero h1 { font-size: 32px; }
+  .hero-statement { font-size: 44px; margin-top: 14px; }
+  .hero-description { font-size: 14px; }
+  .hero-art { height: 240px; }
+  .agency-art-notes { top: auto; bottom: 69px; left: 43%; right: 7%; height: 202px; }
+  .design-selection { inset: 28% 0 20%; }
+  .selection-label { font-size: 8px; top: -23px; padding: 4px 6px; gap: 4px; }
+  .ai-note { top: 0; right: 0; font-size: 8px; gap: 5px; padding: 7px; }
+  .ai-note svg { width: 11px; }
+  .code-note { bottom: 0; right: 0; font-size: 8px; padding: 7px; gap: 5px; }
+  .capability-rail .site-wrap { grid-template-columns: 1fr 1fr; gap: 20px 12px; padding-block: 22px; }
+  .capability-rail span { justify-content: start; font-size: 10px; gap: 8px; }
+  .service-grid { gap: 30px; }
+  .service-card { padding: 24px 0 0; }
+}
