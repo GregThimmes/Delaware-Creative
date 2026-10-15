@@ -178,7 +178,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .nav-link { font-size: 13px; color: var(--muted-foreground); transition: color .2s; }
 .nav-link:hover { color: var(--primary); }
 .hero { position: relative; min-height: 640px; overflow: hidden; background: var(--studio-surface); }
-.hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero::after { content: ''; position: absolute; inset: 0; background: var(--hero-shade); pointer-events: none; }
 .hero-copy { position: relative; z-index: 1; padding-top: 88px; padding-bottom: 92px; max-width: 610px; }
 .eyebrow { display: flex; align-items: center; gap: 9px; font-size: 10px; font-weight: 600; letter-spacing: 0; text-transform: uppercase; }
@@ -239,7 +239,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   .hero { min-height: 0; }
   .hero h1 { font-size: 38px; }
   .hero-copy { padding-bottom: 210px; }
-  .hero-art { inset: auto 0 54px; width: 100%; max-width: none; height: 210px; object-fit: cover; object-position: right 65%; }
+  .hero-art { inset: auto 0 54px; width: 100%; max-width: none; height: 210px; object-fit: cover; object-position: right center; }
   .hero::after { display: none; }
   .hero-bottom { min-height: 54px; }
 }
