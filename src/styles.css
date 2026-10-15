@@ -322,13 +322,13 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .site-header { height: 114px; }
 .header-layout { display: flex; height: 100%; align-items: center; justify-content: space-between; gap: 28px; }
 .header-logo-link { flex-shrink: 0; }
-.agency-logo { display: inline-flex; align-items: center; gap: 17px; color: var(--foreground); }
+.agency-logo { --logo-d: 30px; display: inline-flex; align-items: center; gap: calc(var(--logo-d) * .57); color: var(--foreground); }
 .connection-logo { display: block; object-fit: contain; flex-shrink: 0; }
-.agency-logo > .connection-logo { width: 70px; height: 76px; }
-.agency-logo-name { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; width: 162px; }
-.agency-logo-name img { display: block; width: 100%; object-fit: contain; }
-.logo-delaware { aspect-ratio: 645 / 135; }
-.logo-creative { aspect-ratio: 640 / 202; }
+.agency-logo > .connection-logo { width: calc(var(--logo-d) * 2.33); height: calc(var(--logo-d) * 2.53); }
+.agency-logo-name { display: flex; flex-direction: row; align-items: flex-end; gap: calc(var(--logo-d) * .23); }
+.agency-logo-name img { display: block; width: auto; object-fit: contain; }
+.logo-delaware { height: var(--logo-d); aspect-ratio: 635 / 120; }
+.logo-creative { height: calc(var(--logo-d) * 1.567); aspect-ratio: 624 / 190; transform: translateY(calc(var(--logo-d) * .0985)); }
 .rail-connection { width: 23px; height: 25px; }
 .section-connection { width: 25px; height: 27px; margin-right: 5px; }
 .connected-process > div { position: relative; }
@@ -342,16 +342,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .about-connection { width: 80px; height: 90px; }
 .connected-heading .section-title { font-size: 36px; }
 .signature-connection { width: 22px; height: 24px; margin-inline: 3px; }
-.agency-logo-compact { gap: 10px; }
-.agency-logo-compact > .connection-logo { width: 34px; height: 38px; }
-.agency-logo-compact .agency-logo-name { width: 95px; gap: 2px; }
+.agency-logo-compact { --logo-d: 16px; gap: calc(var(--logo-d) * .63); }
 .mobile-nav { top: 100%; }
 @media(min-width: 768px) and (max-width: 1023px) {
   .header-layout { gap: 18px; }
   .header-layout nav { gap: 20px; }
-  .agency-logo { gap: 13px; }
-  .agency-logo > .connection-logo { width: 57px; height: 64px; }
-  .agency-logo-name { width: 140px; }
+  .agency-logo { --logo-d: 26px; }
   .nav-link { font-size: 12px; }
   .about-layout { gap: 40px; }
   .connected-heading { gap: 15px; }
@@ -360,14 +356,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 }
 @media(max-width: 767px) {
   .site-header { height: 100px; }
-  .agency-logo { gap: 14px; }
-  .agency-logo > .connection-logo { width: 54px; height: 62px; }
-  .agency-logo-name { width: 140px; }
+  .agency-logo { --logo-d: 20px; }
   .header-layout { gap: 12px; }
   .connected-process > div:not(:last-child)::after { display: none; }
   .connected-heading { gap: 17px; }
   .about-connection { width: 59px; height: 69px; }
   .connected-heading .section-title { font-size: 27px; }
-  .agency-logo-compact > .connection-logo { width: 34px; height: 38px; }
-  .agency-logo-compact .agency-logo-name { width: 95px; }
+  .agency-logo-compact { --logo-d: 15px; }
+}
+@media(max-width: 360px) {
+  .agency-logo { --logo-d: 15px; }
+  .agency-logo-compact { --logo-d: 13px; }
 }
