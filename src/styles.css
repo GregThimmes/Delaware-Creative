@@ -178,7 +178,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .nav-link { font-size: 13px; color: var(--muted-foreground); transition: color .2s; }
 .nav-link:hover { color: var(--primary); }
 .hero { position: relative; min-height: 640px; overflow: hidden; background: var(--studio-surface); }
-.hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero::after { content: ''; position: absolute; inset: 0; background: var(--hero-shade); pointer-events: none; }
 .hero-copy { position: relative; z-index: 1; padding-top: 88px; padding-bottom: 92px; max-width: 610px; }
 .eyebrow { display: flex; align-items: center; gap: 9px; font-size: 10px; font-weight: 600; letter-spacing: 0; text-transform: uppercase; }
@@ -233,13 +233,17 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 @keyframes enter { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 .hero-copy { animation: enter .8s ease-out both; }
 @media(min-width: 1600px) { .hero-art { object-position: center 55%; } }
+@media(min-width: 768px) and (max-width: 1023px) {
+  .hero .hero-copy h1 { font-size: 48px; }
+  .hero .hero-copy { max-width: 405px; padding-top: 65px; padding-bottom: 70px; }
+}
 @media(max-width: 1023px) { .site-wrap { padding-inline: 30px; } .hero h1 { font-size: 60px; } .hero-art { object-position: 56% center; } .hero-copy { max-width: 490px; } .service-card { padding: 23px; } .project-stage { padding: 25px 20px 0; } }
 @media(max-width: 767px) { .site-wrap { padding-inline: 24px; } .site-header { height: 76px; } .brand-logo { width: 205px; height: 54px; } .hero { min-height: 790px; } .hero-art { top: 295px; height: 450px; object-position: right; width: 160%; left: -60%; } .hero-copy { padding-top: 45px; padding-bottom: 325px; } .hero h1 { font-size: 49px; margin-top: 20px; } .hero-description { font-size: 14px; margin-top: 20px; max-width: 325px; } .hero-bottom { gap: 15px; font-size: 10px; } .hero-bottom > span:last-child { display: none; } .section { padding-block: 60px; } .section-title { font-size: 34px; } .section-top { align-items: start; flex-direction: column; gap: 20px; margin-bottom: 27px; } .service-grid, .work-grid, .process-grid, .about-layout { grid-template-columns: 1fr; } .service-grid { gap: 16px; } .service-card { padding: 25px; } .service-card h3 { margin-top: 20px; } .work-grid { gap: 33px; } .project-stage { padding: 30px 25px 0; } .process-grid { gap: 30px; margin-top: 30px; } .about-layout { gap: 25px; } .about-band { padding-block: 50px; } .contact-section { padding-block: 60px; } .contact-title { font-size: 43px; } }
 @media(max-width: 767px) {
   .hero { min-height: 0; }
   .hero h1 { font-size: 38px; }
   .hero-copy { padding-bottom: 210px; }
-  .hero-art { inset: auto 0 54px; width: 100%; max-width: none; height: 210px; object-fit: cover; object-position: right 65%; }
+  .hero-art { inset: auto 0 54px; width: 100%; max-width: none; height: 210px; object-fit: cover; object-position: right center; }
   .hero::after { display: none; }
   .hero-bottom { min-height: 54px; }
 }
