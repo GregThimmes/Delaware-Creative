@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Code2, Download, Globe2, Menu, MousePointer2, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/dc-logo.jpg.asset.json";
-import sculpture from "@/assets/studio-sculpture.jpg";
+import logo from "@/assets/dc-logo-dark.png.asset.json";
+import sculpture from "@/assets/studio-sculpture-dark.jpg";
 import house from "@/assets/coastal-house.jpg";
 import cafe from "@/assets/cafe.jpg";
 
