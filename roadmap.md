@@ -2,6 +2,6 @@
 - [x] Build the branded single-page website and import the provided logo.
 - [x] Add mobile navigation, concept work, service details, and contact draft action.
 - [x] Verify desktop and mobile presentation and interactions.
-- [ ] Update agency positioning and add subtle AI-inspired design details.
-- [ ] Verify the updated page and inquiry interaction.
+- [x] Update agency positioning and add subtle AI-inspired design details.
+- [x] Verify the updated page and inquiry interaction.
 - [ ] Connect inquiry delivery — waiting on the business contact email.
