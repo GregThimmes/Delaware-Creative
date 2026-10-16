@@ -368,3 +368,51 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
   .agency-logo { --logo-d: 15px; }
   .agency-logo-compact { --logo-d: 13px; }
 }
+
+/* AI project brief result */
+.brief-result {
+  margin-top: 1.25rem;
+  max-height: 22rem;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: color-mix(in oklch, var(--card) 70%, transparent);
+}
+.brief-result h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 1rem 0 0.35rem;
+}
+.brief-result h3:first-child { margin-top: 0; }
+.brief-result p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--muted-foreground);
+  margin: 0.35rem 0;
+}
+.brief-result ul {
+  list-style: none;
+  margin: 0.35rem 0;
+  padding: 0;
+}
+.brief-result li {
+  position: relative;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+  padding-left: 1.1rem;
+  margin: 0.3rem 0;
+}
+.brief-result li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--orange);
+}
