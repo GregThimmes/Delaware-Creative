@@ -154,7 +154,9 @@ function Project({ kind, onOpen }: { kind: "coastal" | "cafe"; onOpen: () => voi
 function Index() {
   const [menu, setMenu] = useState(false);
   const [inquiry, setInquiry] = useState(false);
+  const [briefOpen, setBriefOpen] = useState(false);
   const openInquiry = () => { setMenu(false); setInquiry(true); };
+  const openBrief = () => { setMenu(false); setBriefOpen(true); };
   return <>
     <header className="site-header"><div className="site-wrap header-layout"><a className="header-logo-link" href="#home" aria-label="Delaware Creative home"><AgencyLogo /></a><nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">{navigation.map(item => <a key={item.id} className="nav-link" href={`#${item.id}`}>{item.label}</a>)}</nav><Button variant="brand" size="cta" className="hidden md:inline-flex" onClick={openInquiry}>Let’s talk <ArrowUpRight /></Button><Button variant="ghost" size="icon" className="md:hidden" aria-label={menu ? "Close menu" : "Open menu"} aria-expanded={menu} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button></div>{menu && <nav className="mobile-nav" aria-label="Mobile navigation">{navigation.map(item => <a key={item.id} className="nav-link" href={`#${item.id}`} onClick={() => setMenu(false)}>{item.label}</a>)}<Button variant="brand" size="cta" onClick={openInquiry}>Let’s talk <ArrowUpRight /></Button></nav>}</header>
     <main>
