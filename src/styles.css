@@ -336,8 +336,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 .connected-process > div:nth-child(2) .process-number { border-color: var(--orange); }
 .connected-process .process-number::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); position: absolute; bottom: -5px; left: 0; }
 .connected-process > div:nth-child(2) .process-number::before { background: var(--orange); }
-.connected-process > div:not(:last-child)::after { content: ''; position: absolute; width: 40px; height: 28px; border-top: 2px solid var(--primary); border-right: 2px solid var(--primary); border-radius: 0 16px 0 0; right: -40px; top: 38px; }
-.connected-process > div:nth-child(2)::after { border-color: var(--orange); }
+.connected-process > div:not(:last-child)::after { content: ''; position: absolute; width: 40px; height: 0; border-top: 2px solid var(--primary); right: -40px; top: 38px; }
+.connected-process > div:nth-child(2)::after { border-top-color: var(--orange); }
 .connected-heading { display: flex; align-items: center; gap: 25px; }
 .about-connection { width: 80px; height: 90px; }
 .connected-heading .section-title { font-size: 36px; }
