@@ -70,6 +70,13 @@ function InquiryDialog({ onClose }: { onClose: () => void }) {
   </div></div>;
 }
 
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**")
+      ? <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>
+      : part);
+}
+
 function BriefBody({ markdown }: { markdown: string }) {
   const blocks: { type: "heading" | "list" | "para"; items: string[] }[] = [];
   for (const raw of markdown.split("\n")) {
