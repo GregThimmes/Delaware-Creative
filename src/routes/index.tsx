@@ -169,5 +169,6 @@ function Index() {
       <section className="contact-section" id="contact"><div className="site-wrap"><div className="eyebrow mb-6 text-ink-muted"><span className="eyebrow-dot" /> YOUR NEXT CHAPTER STARTS HERE</div><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><h2 className="contact-title">Have a good idea?<br /><span className="text-orange">Let’s make it real.</span></h2><p className="mt-6 text-sm text-ink-muted">A distinctive brand. A better website. Design and development, together.</p></div><div className="flex flex-wrap gap-3"><Button variant="brand" size="cta" className="w-fit" onClick={openInquiry}>Start a conversation <ArrowUpRight /></Button><Button variant="outline" size="cta" className="w-fit" onClick={openBrief}><Sparkles /> Get an AI project brief</Button></div></div></div></section>
     </main><footer className="footer"><div className="site-wrap flex flex-wrap items-center justify-between gap-4"><a href="#home" aria-label="Delaware Creative home"><AgencyLogo compact /></a><span>© 2026 Delaware Creative</span><a href="#home" className="flex items-center gap-2" aria-label="Back to top">Back to top <ArrowUpRight size={13} /></a></div></footer>
     {inquiry && <InquiryDialog onClose={() => setInquiry(false)} />}
+    {briefOpen && <BriefDialog onClose={() => setBriefOpen(false)} />}
   </>;
 }
