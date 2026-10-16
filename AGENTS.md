@@ -10,7 +10,7 @@
 <!-- LOVABLE:END -->
 
 ## Website architecture
-- Keep this business website as a single index route with anchored sections; the requested experience is one page.
+- The home page is one index route with anchored sections; each service has its own page at /services/$slug driven by src/lib/services.ts so brief recommendations and service cards link to real follow-through pages.
 - Use global semantic design tokens and the shared Button variants for presentation; this keeps branding consistent.
 - Keep decorative agency annotations browser-safe, non-interactive, and hidden from assistive technology; they enhance the imagery without implying live AI functionality.
 - Render logos through AgencyLogo and ConnectionLogo; shared symbol and transparent original wordmark assets preserve exact brand lettering consistently.
