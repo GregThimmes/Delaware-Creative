@@ -25,7 +25,7 @@ Two or three concrete, friendly next steps, ending with an invitation to start a
 Tone: warm, professional, human. No jargon, no pricing, no invented timelines. Keep the whole brief under 350 words.`;
 
 export async function generateProjectBrief(goals: string): Promise<string> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) {
     throw new Error("AI brief generation is not configured yet.");
   }
