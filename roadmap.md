@@ -5,4 +5,5 @@
 - [x] Update agency positioning and add subtle AI-inspired design details.
 - [x] Verify the updated page and inquiry interaction.
 - [x] Rebuild a more visible navigation logo and extend the connected D/C motif across the page.
+- [x] Add the AI project brief generator (goals in, tailored brief out) via AI Gateway.
 - [ ] Connect inquiry delivery — waiting on the business contact email.
