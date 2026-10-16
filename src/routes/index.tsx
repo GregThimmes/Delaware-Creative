@@ -94,7 +94,7 @@ function BriefBody({ markdown }: { markdown: string }) {
     }
   }
   return <div className="brief-result">{blocks.map((block, i) =>
-    block.type === "heading" ? <h3 key={i}>{renderInline(block.items[0])}</h3>
+    block.type === "heading" ? <h3 key={i}>{renderInline(block.items[0] ?? "")}</h3>
     : block.type === "list" ? <ul key={i}>{block.items.map((item, j) => <li key={j}>{renderInline(item)}</li>)}</ul>
     : <p key={i}>{renderInline(block.items.join(" "))}</p>)}</div>;
 }
