@@ -70,6 +70,78 @@ function InquiryDialog({ onClose }: { onClose: () => void }) {
   </div></div>;
 }
 
+function BriefBody({ markdown }: { markdown: string }) {
+  const blocks: { type: "heading" | "list" | "para"; items: string[] }[] = [];
+  for (const raw of markdown.split("\n")) {
+    const line = raw.trim();
+    if (!line) continue;
+    if (line.startsWith("## ")) blocks.push({ type: "heading", items: [line.slice(3)] });
+    else if (/^[-*•] /.test(line)) {
+      const last = blocks[blocks.length - 1];
+      if (last?.type === "list") last.items.push(line.slice(2));
+      else blocks.push({ type: "list", items: [line.slice(2)] });
+    } else {
+      const last = blocks[blocks.length - 1];
+      if (last?.type === "para") last.items.push(line);
+      else blocks.push({ type: "para", items: [line] });
+    }
+  }
+  return <div className="brief-result">{blocks.map((block, i) =>
+    block.type === "heading" ? <h3 key={i}>{block.items[0]}</h3>
+    : block.type === "list" ? <ul key={i}>{block.items.map((item, j) => <li key={j}>{item}</li>)}</ul>
+    : <p key={i}>{block.items.join(" ")}</p>)}</div>;
+}
+
+function BriefDialog({ onClose }: { onClose: () => void }) {
+  const panel = useRef<HTMLDivElement>(null);
+  const [goals, setGoals] = useState("");
+  const [brief, setBrief] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  useEffect(() => {
+    const previous = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    panel.current?.querySelector<HTMLTextAreaElement>("textarea")?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "Tab") {
+        const elements = panel.current?.querySelectorAll<HTMLElement>("button, textarea");
+        if (!elements?.length) return;
+        const first = elements[0]; const last = elements[elements.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener("keydown", onKey); if (previous instanceof HTMLElement) previous.focus(); };
+  }, [onClose]);
+  async function createBrief(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setBusy(true); setError(null);
+    try {
+      const { brief: result } = await generateBrief({ data: { goals } });
+      setBrief(result);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setBusy(false);
+    }
+  }
+  return <div className="dialog-backdrop" onClick={onClose}><div className="dialog-panel" ref={panel} role="dialog" aria-modal="true" aria-labelledby="brief-title" onClick={e => e.stopPropagation()}>
+    <div className="flex items-center justify-between gap-4"><h2 id="brief-title" className="font-display text-2xl font-medium">Your AI-powered project brief.</h2><Button variant="ghost" size="icon" aria-label="Close brief generator" onClick={onClose}><X /></Button></div>
+    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Describe your business and website goals. Our AI will shape them into a tailored brief with recommended services and next steps.</p>
+    {!brief ? <form onSubmit={createBrief}>
+      <label className="field">Your website goals<textarea name="goals" rows={5} required minLength={10} value={goals} onChange={e => setGoals(e.target.value)} placeholder="For example: We run a family bakery in Lewes and need a website that shows our menu, takes custom cake orders, and helps new customers find us." /></label>
+      <Button variant="studio" size="cta" type="submit" className="mt-6 w-full" disabled={busy}>{busy ? <Loader2 className="animate-spin" /> : <Sparkles />}{busy ? "Creating your brief…" : "Create my project brief"}</Button>
+      {error && <p role="alert" className="mt-3 text-center text-xs text-orange">{error}</p>}
+    </form> : <>
+      <BriefBody markdown={brief} />
+      <div className="mt-6 flex flex-wrap gap-3"><Button variant="outline" size="cta" onClick={() => { setBrief(null); setGoals(""); }}>Start over</Button><Button variant="studio" size="cta" onClick={onClose}>Done <Check /></Button></div>
+    </>}
+  </div></div>;
+}
+
 function Project({ kind, onOpen }: { kind: "coastal" | "cafe"; onOpen: () => void }) {
   const coastal = kind === "coastal";
   return <article><div className={`project-stage ${kind}`}><div className="browser-frame">
