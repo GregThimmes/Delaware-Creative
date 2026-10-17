@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Code2, Download, Globe2, Loader2, Menu, MousePointer2, Sparkles, X, PenTool, Braces } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, Code2, Download, Globe2, Menu, MousePointer2, Sparkles, X, PenTool, Braces } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AgencyLogo, ConnectionLogo } from "@/components/agency-logo";
 import { InquiryDialog } from "@/components/inquiry-dialog";
