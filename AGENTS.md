@@ -17,3 +17,5 @@
 - Keep the wordmark on one horizontal line (symbol, then "Delaware" and "Creative." side by side on a shared baseline); scale the whole lockup with the single --logo-d variable rather than per-part sizes.
 - Label sample project designs as concepts, and do not claim them as completed client work.
 - Contact inquiry drafts are client-side and not sent or stored; a real recipient must be supplied before enabling delivery.
+
+- Portfolio lives at /work and /work/$slug, driven by src/lib/projects.ts; entries are labeled sample concepts until the owner supplies real project details.

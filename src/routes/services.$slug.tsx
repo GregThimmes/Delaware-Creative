@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { AgencyLogo, ConnectionLogo } from "@/components/agency-logo";
 import { InquiryDialog } from "@/components/inquiry-dialog";
 import { getService, services } from "@/lib/services";
+import { projectsForService } from "@/lib/projects";
+import { ProjectCard } from "@/components/project-card";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -53,6 +55,7 @@ function ServicePage() {
         <ul className="grid gap-3 md:grid-cols-3">{service.fit.map(f => <li key={f} className="flex gap-3 text-sm leading-6"><Check size={18} className="shrink-0 text-orange" />{f}</li>)}</ul>
         <div className="mt-12 border-t border-border pt-6"><p className="text-xs text-muted-foreground">Pairs well with</p><div className="mt-3 flex flex-wrap gap-2">{others.map(o => <Button key={o.slug} variant="outline" size="sm" asChild><Link to="/services/$slug" params={{ slug: o.slug }}>{o.title} <ArrowUpRight /></Link></Button>)}</div></div>
       </section>
+      <section className="section site-wrap"><div className="section-top"><div><div className="eyebrow mb-4 text-primary">04 / RELATED WORK</div><h2 className="section-title">See it in practice.</h2></div><Link to="/work" className="inline-flex items-center gap-2 text-xs font-medium text-primary">View full portfolio <ArrowUpRight size={13} /></Link></div><div className="service-grid">{projectsForService(service.slug).map(p => <ProjectCard key={p.slug} project={p} />)}</div></section>
       <section className="contact-section"><div className="site-wrap flex flex-col justify-between gap-8 md:flex-row md:items-end"><h2 className="contact-title">Ready for the next step?<br /><span className="text-orange">Let’s make it real.</span></h2><Button variant="brand" size="cta" className="w-fit" onClick={() => setInquiry(true)}>Start a conversation <ArrowUpRight /></Button></div></section>
     </main>
     <footer className="footer"><div className="site-wrap flex flex-wrap items-center justify-between gap-4"><Link to="/" aria-label="Delaware Creative home"><AgencyLogo compact /></Link><span>© 2026 Delaware Creative</span></div></footer>
