@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Check, Download, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function InquiryDialog({ onClose, defaultService }: { onClose: () => void; defaultService?: string }) {
+export function InquiryDialog({ onClose, defaultService }: { onClose: () => void; defaultService?: string | undefined }) {
   const panel = useRef<HTMLDivElement>(null);
   const [saved, setSaved] = useState(false);
   useEffect(() => {
