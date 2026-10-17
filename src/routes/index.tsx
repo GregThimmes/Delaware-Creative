@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Code2, Download, Globe2, Loader2, Menu, MousePointer2, Sparkles, X, PenTool, Braces } from "lucide-react";
-import { generateBrief } from "@/lib/ai/brief.functions";
 import { Button } from "@/components/ui/button";
 import { AgencyLogo, ConnectionLogo } from "@/components/agency-logo";
 import { InquiryDialog } from "@/components/inquiry-dialog";
@@ -31,86 +30,6 @@ const services = [
 ];
 
 
-function renderInline(text: string) {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith("**") && part.endsWith("**")
-      ? <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>
-      : part);
-}
-
-function BriefBody({ markdown }: { markdown: string }) {
-  const blocks: { type: "heading" | "list" | "para"; items: string[] }[] = [];
-  for (const raw of markdown.split("\n")) {
-    const line = raw.trim();
-    if (!line) continue;
-    if (line.startsWith("## ")) blocks.push({ type: "heading", items: [line.slice(3)] });
-    else if (/^[-*•] /.test(line)) {
-      const last = blocks[blocks.length - 1];
-      if (last?.type === "list") last.items.push(line.slice(2));
-      else blocks.push({ type: "list", items: [line.slice(2)] });
-    } else {
-      const last = blocks[blocks.length - 1];
-      if (last?.type === "para") last.items.push(line);
-      else blocks.push({ type: "para", items: [line] });
-    }
-  }
-  return <div className="brief-result">{blocks.map((block, i) =>
-    block.type === "heading" ? <h3 key={i}>{renderInline(block.items[0] ?? "")}</h3>
-    : block.type === "list" ? <ul key={i}>{block.items.map((item, j) => <li key={j}>{renderInline(item)}</li>)}</ul>
-    : <p key={i}>{renderInline(block.items.join(" "))}</p>)}</div>;
-}
-
-function BriefDialog({ onClose }: { onClose: () => void }) {
-  const panel = useRef<HTMLDivElement>(null);
-  const [goals, setGoals] = useState("");
-  const [brief, setBrief] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
-  useEffect(() => {
-    const previous = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    panel.current?.querySelector<HTMLTextAreaElement>("textarea")?.focus();
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "Tab") {
-        const elements = panel.current?.querySelectorAll<HTMLElement>("button, textarea");
-        if (!elements?.length) return;
-        const first = elements[0]; const last = elements[elements.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener("keydown", onKey); if (previous instanceof HTMLElement) previous.focus(); };
-  }, [onClose]);
-  async function createBrief(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setBusy(true); setError(null);
-    try {
-      const { brief: result } = await generateBrief({ data: { goals } });
-      setBrief(result);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setBusy(false);
-    }
-  }
-  return <div className="dialog-backdrop" onClick={onClose}><div className="dialog-panel" ref={panel} role="dialog" aria-modal="true" aria-labelledby="brief-title" onClick={e => e.stopPropagation()}>
-    <div className="flex items-center justify-between gap-4"><h2 id="brief-title" className="font-display text-2xl font-medium">Your AI-powered project brief.</h2><Button variant="ghost" size="icon" aria-label="Close brief generator" onClick={onClose}><X /></Button></div>
-    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">Describe your business and website goals. Our AI will shape them into a tailored brief with recommended services and next steps.</p>
-    {!brief ? <form onSubmit={createBrief}>
-      <label className="field">Your website goals<textarea name="goals" rows={5} required minLength={10} value={goals} onChange={e => setGoals(e.target.value)} placeholder="For example: We run a family bakery in Lewes and need a website that shows our menu, takes custom cake orders, and helps new customers find us." /></label>
-      <Button variant="studio" size="cta" type="submit" className="mt-6 w-full" disabled={busy}>{busy ? <Loader2 className="animate-spin" /> : <Sparkles />}{busy ? "Creating your brief…" : "Create my project brief"}</Button>
-      {error && <p role="alert" className="mt-3 text-center text-xs text-orange">{error}</p>}
-    </form> : <>
-      <BriefBody markdown={brief} />
-      <div className="mt-6 border-t border-border pt-4"><p className="text-xs text-muted-foreground">Explore the recommended services:</p><div className="mt-3 flex flex-wrap gap-2">{(servicePages.filter(sp => brief.toLowerCase().includes(sp.title.toLowerCase())).length ? servicePages.filter(sp => brief.toLowerCase().includes(sp.title.toLowerCase())) : servicePages).map(sp => <Button key={sp.slug} variant="outline" size="sm" asChild><Link to="/services/$slug" params={{ slug: sp.slug }}>{sp.title} <ArrowUpRight /></Link></Button>)}</div></div>
-      <div className="mt-6 flex flex-wrap gap-3"><Button variant="outline" size="cta" onClick={() => { setBrief(null); setGoals(""); }}>Start over</Button><Button variant="studio" size="cta" onClick={onClose}>Done <Check /></Button></div>
-    </>}
-  </div></div>;
-}
-
 function Project({ kind, onOpen }: { kind: "coastal" | "cafe"; onOpen: () => void }) {
   const coastal = kind === "coastal";
   return <article><div className={`project-stage ${kind}`}><div className="browser-frame">
@@ -123,9 +42,7 @@ function Project({ kind, onOpen }: { kind: "coastal" | "cafe"; onOpen: () => voi
 function Index() {
   const [menu, setMenu] = useState(false);
   const [inquiry, setInquiry] = useState(false);
-  const [briefOpen, setBriefOpen] = useState(false);
   const openInquiry = () => { setMenu(false); setInquiry(true); };
-  const openBrief = () => { setMenu(false); setBriefOpen(true); };
   return <>
     <header className="site-header"><div className="site-wrap header-layout"><a className="header-logo-link" href="#home" aria-label="Delaware Creative home"><AgencyLogo /></a><nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">{navigation.map(item => <a key={item.id} className="nav-link" href={`#${item.id}`}>{item.label}</a>)}</nav><Button variant="brand" size="cta" className="hidden md:inline-flex" onClick={openInquiry}>Let’s talk <ArrowUpRight /></Button><Button variant="ghost" size="icon" className="md:hidden" aria-label={menu ? "Close menu" : "Open menu"} aria-expanded={menu} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button></div>{menu && <nav className="mobile-nav" aria-label="Mobile navigation">{navigation.map(item => <a key={item.id} className="nav-link" href={`#${item.id}`} onClick={() => setMenu(false)}>{item.label}</a>)}<Button variant="brand" size="cta" onClick={openInquiry}>Let’s talk <ArrowUpRight /></Button></nav>}</header>
     <main>
@@ -135,9 +52,8 @@ function Index() {
       <section className="section work-section" id="work"><div className="site-wrap"><div className="section-top"><div><div className="eyebrow mb-4 text-primary">02 / CREATIVE POSSIBILITIES</div><h2 className="section-title">Different businesses.<br />Same thoughtful approach.</h2></div><p className="max-w-72 text-sm leading-7 text-muted-foreground">A glimpse of what’s possible.<br />Original website concepts, made to inspire.</p></div><div className="work-grid"><Project kind="coastal" onOpen={openInquiry} /><Project kind="cafe" onOpen={openInquiry} /></div><Link to="/work" className="mt-10 inline-flex items-center gap-2 text-xs font-medium text-primary">View full portfolio <ArrowUpRight size={13} /></Link></div></section>
       <section className="section site-wrap" id="process"><div className="eyebrow mb-4 text-primary"><ConnectionLogo className="section-connection" /> 03 / HOW WE GET THERE</div><h2 className="section-title">A clear process.<br />A creative partnership.</h2><div className="process-grid connected-process">{[{ title: "First, we listen.", text: "Your story, your customers, your goals. We start with a conversation and get to know what makes your business different." }, { title: "Then, we create.", text: "We bring your vision into focus with thoughtful design and purposeful development. You’re part of the conversation at every step." }, { title: "Next, you shine.", text: "We refine the details, test across devices, and get you ready to launch. A new digital home for your next chapter." }].map((step, i) => <div key={step.title}><div className="process-number">0{i + 1} <ArrowRight className="float-right" size={17} /></div><h3>{step.title}</h3><p>{step.text}</p></div>)}</div></section>
       <section className="about-band" id="about"><div className="site-wrap about-layout"><div><div className="eyebrow mb-5"><Sparkles size={14} className="text-orange" /> 04 / HUMAN FIRST. FUTURE FACING.</div><div className="connected-heading"><ConnectionLogo className="about-connection" /><h2 className="section-title">Creative instinct.<br />Modern intelligence.</h2></div></div><div><p className="text-base leading-8">We’re Delaware Creative—a small design agency bringing brand thinking, digital design, and web development together.</p><p className="mt-4 text-sm leading-7 text-muted-foreground">Inspired by the possibilities of AI. Grounded in the things that make great design human: taste, empathy, and a point of view. Your business stays at the center—not the technology.</p><div className="agency-signature"><PenTool size={16} /><span>Human perspective</span><ConnectionLogo className="signature-connection" /><Braces size={16} /><span>Digital craft</span></div></div></div></section>
-      <section className="contact-section" id="contact"><div className="site-wrap"><div className="eyebrow mb-6 text-ink-muted"><span className="eyebrow-dot" /> YOUR NEXT CHAPTER STARTS HERE</div><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><h2 className="contact-title">Have a good idea?<br /><span className="text-orange">Let’s make it real.</span></h2><p className="mt-6 text-sm text-ink-muted">A distinctive brand. A better website. Design and development, together.</p></div><div className="flex flex-wrap gap-3"><Button variant="brand" size="cta" className="w-fit" onClick={openInquiry}>Start a conversation <ArrowUpRight /></Button><Button variant="outline" size="cta" className="w-fit" onClick={openBrief}><Sparkles /> Get an AI project brief</Button></div></div></div></section>
+      <section className="contact-section" id="contact"><div className="site-wrap"><div className="eyebrow mb-6 text-ink-muted"><span className="eyebrow-dot" /> YOUR NEXT CHAPTER STARTS HERE</div><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><h2 className="contact-title">Have a good idea?<br /><span className="text-orange">Let’s make it real.</span></h2><p className="mt-6 text-sm text-ink-muted">A distinctive brand. A better website. Design and development, together.</p></div><div className="flex flex-wrap gap-3"><Button variant="brand" size="cta" className="w-fit" onClick={openInquiry}>Start a conversation <ArrowUpRight /></Button></div></div></div></section>
     </main><footer className="footer"><div className="site-wrap flex flex-wrap items-center justify-between gap-4"><a href="#home" aria-label="Delaware Creative home"><AgencyLogo compact /></a><span>© 2026 Delaware Creative</span><a href="#home" className="flex items-center gap-2" aria-label="Back to top">Back to top <ArrowUpRight size={13} /></a></div></footer>
     {inquiry && <InquiryDialog onClose={() => setInquiry(false)} />}
-    {briefOpen && <BriefDialog onClose={() => setBriefOpen(false)} />}
   </>;
 }
