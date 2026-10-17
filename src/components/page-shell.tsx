@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { AgencyLogo } from "@/components/agency-logo";
 import { InquiryDialog } from "@/components/inquiry-dialog";
 
-export function PageShell({ children, defaultService }: { children: (openInquiry: () => void) => ReactNode; defaultService?: string }) {
+export function PageShell({ children, defaultService }: { children: (openInquiry: () => void) => ReactNode; defaultService?: string | undefined }) {
   const [inquiry, setInquiry] = useState(false);
   const open = () => setInquiry(true);
   return <>
