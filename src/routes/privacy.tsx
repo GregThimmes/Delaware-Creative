@@ -12,7 +12,7 @@ export const Route = createFileRoute("/privacy")({
   ] }),
   component: () => <SiteShell><article className="wrap max-w-3xl py-20">
     <h1 className="section-title">Privacy Policy</h1>
-    <p className="mt-4 rounded-xl bg-cream px-4 py-3 text-sm">Draft summary — full policy is being finalized.</p>
+    <p className="mt-4 rounded-xl bg-cream px-4 py-3 text-sm text-buff-foreground">Draft summary — full policy is being finalized.</p>
     <p className="mt-8 text-slate">This website does not currently collect or store personal information. The “Get My Website” form saves details only to your own device; nothing is sent to us.</p>
   </article></SiteShell>,
 });

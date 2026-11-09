@@ -32,10 +32,10 @@ function GetStarted() {
   return <SiteShell>
     <section className="bg-cream py-16 md:py-24"><div className="wrap grid gap-12 lg:grid-cols-[1fr_1.2fr]">
       <div>
-        <p className="eyebrow text-orange">Step 1</p>
-        <h1 className="section-title mt-3">Tell us about your business.</h1>
-        <p className="mt-4 text-lg text-slate">Share the basics and we’ll take it from there. ${pricing.monthly}/month, no setup fee.</p>
-        <p className="mt-6 text-sm text-slate">{pricing.commitment}</p>
+        <p className="eyebrow text-buff-foreground">Step 1</p>
+        <h1 className="section-title mt-3 text-buff-foreground">Tell us about your business.</h1>
+        <p className="mt-4 text-lg text-buff-foreground/75">Share the basics and we’ll take it from there. ${pricing.monthly}/month, no setup fee.</p>
+        <p className="mt-6 text-sm text-buff-foreground/75">{pricing.commitment}</p>
       </div>
       <form onSubmit={save} className="rounded-3xl bg-background p-6 shadow-[var(--shadow-card)] md:p-8">
         <p className="mb-5 rounded-xl bg-mist px-4 py-3 text-sm">Online sign-up isn’t live yet. This saves your details as a file on your device — nothing is sent.</p>

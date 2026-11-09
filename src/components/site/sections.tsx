@@ -50,9 +50,9 @@ export function ProblemSolution() {
   return <section className="bg-cream py-20 md:py-28">
     <div className="wrap">
       <div className="max-w-3xl">
-        <h2 className="section-title">You’re great at what you do. Your website should show it.</h2>
-        <p className="mt-6 text-lg leading-relaxed text-slate">Whether you’re mowing lawns, cleaning homes, fixing things, painting houses, or running a local business, customers want to find you online.</p>
-        <p className="mt-3 text-lg leading-relaxed text-slate">Building a website can be expensive, confusing, and time-consuming. That’s where we come in.</p>
+        <h2 className="section-title text-buff-foreground">You’re great at what you do. Your website should show it.</h2>
+        <p className="mt-6 text-lg leading-relaxed text-buff-foreground/75">Whether you’re mowing lawns, cleaning homes, fixing things, painting houses, or running a local business, customers want to find you online.</p>
+        <p className="mt-3 text-lg leading-relaxed text-buff-foreground/75">Building a website can be expensive, confusing, and time-consuming. That’s where we come in.</p>
       </div>
       <div className="mt-12 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr]">
         <figure className="browser-frame opacity-90">
@@ -65,14 +65,14 @@ export function ProblemSolution() {
           </div>
           <figcaption className="px-5 py-4 text-sm font-semibold text-slate">Before: outdated, hard to find, or no website at all.</figcaption>
         </figure>
-        <div className="flex items-center justify-center" aria-hidden="true"><span className="flex size-12 items-center justify-center rounded-full bg-orange text-orange-foreground rotate-90 md:rotate-0"><ArrowRight /></span></div>
+        <div className="flex items-center justify-center" aria-hidden="true"><span className="flex size-12 items-center justify-center rounded-full bg-navy text-cream rotate-90 md:rotate-0"><ArrowRight /></span></div>
         <figure className="browser-frame">
           <BrowserBar url="firststatelawn.com" />
           <img src={examples[0]!.image} alt="A polished sample landscaping website" loading="lazy" width={1280} height={896} className="h-64 w-full object-cover object-top" />
           <figcaption className="px-5 py-4 text-sm font-semibold text-foreground">After: a professional site customers trust.</figcaption>
         </figure>
       </div>
-      <p className="mt-12 text-center font-display text-2xl font-extrabold md:text-3xl">You handle the business. <span className="text-orange">We’ll handle the website.</span></p>
+      <p className="mt-12 text-center font-display text-2xl font-extrabold text-buff-foreground md:text-3xl">You handle the business. <span className="text-buff-deep">We’ll handle the website.</span></p>
     </div>
   </section>;
 }
@@ -144,15 +144,15 @@ export function Pricing() {
         <h2 className="section-title">A great website shouldn’t cost a fortune.</h2>
         <p className="mt-4 text-lg text-primary-foreground/80">One simple price. Everything you need to get your business online.</p>
       </div>
-      <div className="w-full max-w-lg justify-self-center rounded-3xl lg:justify-self-end bg-cream p-8 text-foreground shadow-[var(--shadow-lift)] md:p-10">
-        <p className="text-center"><span className="font-display text-6xl font-extrabold">${pricing.monthly}</span><span className="text-xl font-bold text-slate"> / month</span></p>
-        <p className="mt-2 text-center font-semibold text-slate">No setup fee. No complicated pricing.</p>
+      <div className="w-full max-w-lg justify-self-center rounded-3xl lg:justify-self-end bg-cream p-8 text-buff-foreground shadow-[var(--shadow-lift)] md:p-10">
+        <p className="text-center"><span className="font-display text-6xl font-extrabold">${pricing.monthly}</span><span className="text-xl font-bold text-buff-foreground/70"> / month</span></p>
+        <p className="mt-2 text-center font-semibold text-buff-foreground/85">No setup fee. No complicated pricing.</p>
         <ul className="mt-8 grid gap-3">
-          {pricing.included.map(item => <li key={item} className="flex items-start gap-3 text-[15px]"><span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-orange text-orange-foreground"><Check className="size-3.5" strokeWidth={3} /></span>{item}</li>)}
+          {pricing.included.map(item => <li key={item} className="flex items-start gap-3 text-[15px]"><span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-navy text-cream"><Check className="size-3.5" strokeWidth={3} /></span>{item}</li>)}
         </ul>
-        <Button asChild variant="kick" size="cta" className="mt-8 w-full"><Link to="/get-started">Get Started for $20/Month <ArrowRight /></Link></Button>
-        <p className="mt-5 rounded-xl bg-background px-4 py-3 text-center text-sm font-semibold">{pricing.commitment}</p>
-        <p className="mt-3 text-center text-xs text-slate">{pricing.domainNote}</p>
+        <Button asChild variant="navy" size="cta" className="mt-8 w-full"><Link to="/get-started">Get Started for $20/Month <ArrowRight /></Link></Button>
+        <p className="mt-5 rounded-xl bg-background px-4 py-3 text-center text-sm font-semibold text-foreground">{pricing.commitment}</p>
+        <p className="mt-3 text-center text-xs text-buff-foreground/85">{pricing.domainNote}</p>
       </div>
     </div>
   </section>;
@@ -167,7 +167,7 @@ export function Industries() {
       <p className="mt-6 text-slate">Don’t see your business? <Link to="/get-started" className="font-semibold text-foreground underline decoration-orange decoration-2 underline-offset-4 hover:text-orange">Let’s talk.</Link></p>
       </div>
       <ul className="grid grid-cols-2 gap-3">
-        {industries.map((name, i) => { const Icon = industryIcons[i]!; return <li key={name} className="flex items-center gap-3 rounded-2xl border border-border bg-muted px-4 py-5 font-semibold transition-colors hover:border-orange hover:bg-cream">
+        {industries.map((name, i) => { const Icon = industryIcons[i]!; return <li key={name} className="flex items-center gap-3 rounded-2xl border border-border bg-muted px-4 py-5 font-semibold transition-colors hover:border-orange hover:bg-navy/40">
           <Icon className="size-5 shrink-0 text-orange" />{name}
         </li>; })}
       </ul>
@@ -193,18 +193,18 @@ export function FinalCTA() {
   return <section className="bg-cream py-20 md:py-28">
     <div className="wrap grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
       <div>
-        <h2 className="section-title">Ready to give your business a better online presence?</h2>
-        <p className="mt-5 max-w-xl text-lg text-slate">You don’t need an expensive agency or a complicated project. You just need a website that works.</p>
-        <Button asChild variant="kick" size="cta" className="mt-8"><Link to="/get-started">Get My Website for $20/Month <ArrowRight /></Link></Button>
-        <p className="mt-6 text-sm font-semibold text-slate">302 Sitekick. Your Delaware website, made simple.</p>
+        <h2 className="section-title text-buff-foreground">Ready to give your business a better online presence?</h2>
+        <p className="mt-5 max-w-xl text-lg text-buff-foreground/75">You don’t need an expensive agency or a complicated project. You just need a website that works.</p>
+        <Button asChild variant="navy" size="cta" className="mt-8"><Link to="/get-started">Get My Website for $20/Month <ArrowRight /></Link></Button>
+        <p className="mt-6 text-sm font-semibold text-buff-foreground/75">302 Sitekick. Your Delaware website, made simple.</p>
       </div>
       <div aria-hidden="true" className="relative mx-auto w-full max-w-sm">
         <div className="browser-frame rotate-2">
           <BrowserBar url="yourbusiness.com" />
           <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-foreground">Your business, online<span className="caret text-orange">|</span></div><div className="h-9 w-32 rounded-full bg-orange" /></div>
         </div>
-        <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-orange text-foreground" strokeWidth={1.5} />
-        <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-background text-orange" />
+        <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-buff-deep text-buff-foreground" strokeWidth={1.5} />
+        <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-buff-foreground text-cream" />
       </div>
     </div>
   </section>;

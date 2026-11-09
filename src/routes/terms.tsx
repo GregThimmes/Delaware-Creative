@@ -13,7 +13,7 @@ export const Route = createFileRoute("/terms")({
   ] }),
   component: () => <SiteShell><article className="wrap max-w-3xl py-20">
     <h1 className="section-title">Terms of Service</h1>
-    <p className="mt-4 rounded-xl bg-cream px-4 py-3 text-sm">Draft summary — full terms are being finalized.</p>
+    <p className="mt-4 rounded-xl bg-cream px-4 py-3 text-sm text-buff-foreground">Draft summary — full terms are being finalized.</p>
     <ul className="mt-8 grid list-disc gap-3 pl-5 text-slate">
       <li>Subscription: ${pricing.monthly}/month, no setup fee.</li>
       <li>{pricing.commitment}</li>
