@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import {
   ArrowRight, BadgeCheck, Brush, Car, Check, ClipboardList, Droplets, FileText, Globe, Hammer, Home, LayoutTemplate,
-  Leaf, LifeBuoy, Lock, Mail, MessageSquareText, MousePointer2, PaintRoller, RefreshCw, Rocket, Search, Smartphone,
+  Leaf, LifeBuoy, Lock, Mail, MousePointer2, PaintRoller, RefreshCw, Rocket, Search, Smartphone,
   Sparkles, Briefcase, AlertTriangle, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -201,7 +201,6 @@ export function FinalCTA() {
         </div>
         <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-orange text-navy" strokeWidth={1.5} />
         <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-background text-orange" />
-        <MessageSquareText className="hidden" />
       </div>
     </div>
   </section>;
