@@ -110,6 +110,7 @@
   --shadow-card: 0 0 0 1px oklch(0.6 0.14 252 / 14%), 0 16px 40px -16px oklch(0 0 0 / 60%);
   --shadow-lift: 0 0 0 1px oklch(0.6 0.14 252 / 35%), 0 0 40px -8px oklch(0.6 0.14 252 / 40%), 0 24px 48px -16px oklch(0 0 0 / 70%);
   --shadow-glow: 0 0 24px -4px oklch(0.79 0.115 78 / 60%);
+  --shadow-glow-blue: 0 0 22px -4px oklch(0.6 0.14 252 / 55%);
   --chart-1: oklch(0.79 0.115 78);
   --chart-2: oklch(0.6 0.14 252);
   --chart-3: oklch(0.8 0.022 250);
@@ -150,4 +151,5 @@
     radial-gradient(600px circle at 95% 100%, oklch(0.79 0.115 78 / 18%), transparent 60%);
 }
 @utility ai-glow { box-shadow: var(--shadow-glow); }
+@utility ai-glow-blue { box-shadow: var(--shadow-glow-blue); }
 @utility ai-text { background: linear-gradient(90deg, var(--orange), oklch(0.88 0.07 85)); -webkit-background-clip: text; background-clip: text; color: transparent; }

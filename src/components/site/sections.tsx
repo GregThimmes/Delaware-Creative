@@ -63,13 +63,13 @@ export function ProblemSolution() {
             <p className="font-mono text-xs text-muted-foreground">Last updated: 2014 · Under construction 🚧</p>
             <span className="rounded border border-dashed border-input px-3 py-1 font-mono text-[11px] text-muted-foreground">image not found</span>
           </div>
-          <figcaption className="px-5 py-4 text-sm font-semibold text-buff-foreground/75">Before: outdated, hard to find, or no website at all.</figcaption>
+          <figcaption className="px-5 py-4 text-sm font-semibold text-slate">Before: outdated, hard to find, or no website at all.</figcaption>
         </figure>
         <div className="flex items-center justify-center" aria-hidden="true"><span className="flex size-12 items-center justify-center rounded-full bg-navy text-cream rotate-90 md:rotate-0"><ArrowRight /></span></div>
         <figure className="browser-frame">
           <BrowserBar url="firststatelawn.com" />
           <img src={examples[0]!.image} alt="A polished sample landscaping website" loading="lazy" width={1280} height={896} className="h-64 w-full object-cover object-top" />
-          <figcaption className="px-5 py-4 text-sm font-semibold text-buff-foreground">After: a professional site customers trust.</figcaption>
+          <figcaption className="px-5 py-4 text-sm font-semibold text-foreground">After: a professional site customers trust.</figcaption>
         </figure>
       </div>
       <p className="mt-12 text-center font-display text-2xl font-extrabold text-buff-foreground md:text-3xl">You handle the business. <span className="text-buff-deep">We’ll handle the website.</span></p>
