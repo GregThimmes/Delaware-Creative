@@ -18,7 +18,7 @@ export function BrowserBar({ url }: { url: string }) {
 }
 
 export function Hero() {
-  return <section className="grid bg-navy text-primary-foreground lg:min-h-[calc(100vh-80px)] lg:grid-cols-2">
+  return <section className="ai-grid grid bg-navy text-primary-foreground lg:min-h-[calc(100vh-80px)] lg:grid-cols-2">
     <div className="relative flex items-center overflow-hidden px-5 py-16 md:px-12 md:py-20 xl:pl-[max(2rem,calc((100vw-1200px)/2+2rem))]">
       <DelawareMap className="pointer-events-none absolute -right-16 -top-10 h-[130%] text-primary-foreground opacity-[0.07]" />
       <div className="fade-up relative max-w-xl">
@@ -138,7 +138,7 @@ export function Features() {
 }
 
 export function Pricing() {
-  return <section id="pricing" className="bg-navy py-20 text-primary-foreground md:py-28">
+  return <section id="pricing" className="ai-grid bg-navy py-20 text-primary-foreground md:py-28">
     <div className="wrap grid items-center gap-12 lg:grid-cols-2">
       <div>
         <h2 className="section-title">A great website shouldn’t cost a fortune.</h2>

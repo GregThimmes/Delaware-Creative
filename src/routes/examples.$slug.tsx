@@ -35,7 +35,7 @@ function ExamplePage() {
       <div><h2 className="text-2xl font-extrabold">What’s on the site</h2><ul className="mt-5 flex flex-wrap gap-2">{example.pages.map(p => <li key={p} className="rounded-full bg-mist px-4 py-2 text-sm font-semibold">{p}</li>)}</ul></div>
       <div><h2 className="text-2xl font-extrabold">Why it works</h2><ul className="mt-5 grid gap-3">{example.highlights.map(h => <li key={h} className="flex gap-3"><Check className="mt-0.5 size-5 shrink-0 text-orange" />{h}</li>)}</ul></div>
     </div></section>
-    <section className="bg-navy py-16 text-primary-foreground"><div className="wrap flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+    <section className="ai-grid bg-navy py-16 text-primary-foreground"><div className="wrap flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
       <div><h2 className="text-3xl font-extrabold">Want one like this for your business?</h2><p className="mt-2 text-primary-foreground/75">Just $20/month. No setup fee.</p></div>
       <Button asChild variant="kick" size="cta"><Link to="/get-started">Get My Website <ArrowRight /></Link></Button>
     </div></section>

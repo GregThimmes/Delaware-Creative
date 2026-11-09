@@ -34,7 +34,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="bg-navy-deep text-primary-foreground">
+  return <footer className="ai-grid bg-navy-deep text-primary-foreground">
     <div className="wrap grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
       <div><Logo light /><p className="mt-4 text-sm text-primary-foreground/75">{brand.tagline}</p><p className="mt-6 font-display text-xl font-bold">{brand.footerMessage}</p></div>
       <nav aria-label="Footer" className="flex flex-col gap-2.5 text-sm">
