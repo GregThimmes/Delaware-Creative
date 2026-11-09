@@ -6,7 +6,7 @@ import { brand, navLinks } from "@/lib/site-content";
 
 export function Logo({ light = false }: { light?: boolean }) {
   return <span className="inline-flex items-center gap-2.5" aria-label={brand.name} role="img">
-    <span aria-hidden="true" className={`relative inline-flex h-9 items-center rounded-lg px-2 font-display text-xl font-extrabold tracking-tight ${light ? "bg-primary-foreground text-navy" : "bg-navy text-primary-foreground"}`}>
+    <span aria-hidden="true" className={`relative inline-flex h-9 items-center rounded-lg px-2 font-display text-xl font-extrabold tracking-tight ${light ? "bg-primary-foreground text-navy" : "bg-primary text-primary-foreground ai-glow"}`}>
       302<MousePointer2 className="absolute -right-2 -bottom-2 size-4 fill-orange text-orange" strokeWidth={2.5} />
     </span>
     <span aria-hidden="true" className={`font-display text-lg font-extrabold tracking-[0.12em] ${light ? "text-primary-foreground" : "text-foreground"}`}>SITEKICK</span>
