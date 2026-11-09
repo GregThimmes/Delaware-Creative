@@ -146,9 +146,9 @@
   position: relative;
   isolation: isolate;
   background-image:
-    radial-gradient(700px circle at 10% 0%, oklch(0.6 0.14 252 / 32%), transparent 60%),
-    radial-gradient(600px circle at 95% 100%, oklch(0.79 0.115 78 / 18%), transparent 60%);
+    radial-gradient(700px circle at 10% 0%, oklch(1 0 0 / 10%), transparent 60%),
+    radial-gradient(600px circle at 95% 100%, oklch(0.85 0.16 95 / 16%), transparent 60%);
 }
 @utility ai-glow { box-shadow: var(--shadow-glow); }
 @utility ai-glow-blue { box-shadow: var(--shadow-glow-blue); }
-@utility ai-text { background: linear-gradient(90deg, var(--orange), oklch(0.88 0.07 85)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility ai-text { background: linear-gradient(90deg, var(--orange), oklch(0.96 0.02 95)); -webkit-background-clip: text; background-clip: text; color: transparent; }
