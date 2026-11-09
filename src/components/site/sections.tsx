@@ -64,7 +64,7 @@ export function ProblemSolution() {
           </div>
           <figcaption className="px-5 py-4 text-sm font-semibold text-slate">Before: outdated, hard to find, or no website at all.</figcaption>
         </figure>
-        <div className="flex items-center justify-center" aria-hidden="true"><span className="flex size-12 items-center justify-center rounded-full bg-orange text-orange-foreground md:rotate-0"><ArrowRight /></span></div>
+        <div className="flex items-center justify-center" aria-hidden="true"><span className="flex size-12 items-center justify-center rounded-full bg-orange text-orange-foreground rotate-90 md:rotate-0"><ArrowRight /></span></div>
         <figure className="browser-frame">
           <BrowserBar url="firststatelawn.com" />
           <img src={examples[0]!.image} alt="A polished sample landscaping website" loading="lazy" width={1280} height={896} className="h-64 w-full object-cover object-top" />
