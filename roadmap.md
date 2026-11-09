@@ -1,11 +1,5 @@
-# Delaware Creative website
-- [x] Build the branded single-page website and import the provided logo.
-- [x] Add mobile navigation, concept work, service details, and contact draft action.
-- [x] Verify desktop and mobile presentation and interactions.
-- [x] Update agency positioning and add subtle AI-inspired design details.
-- [x] Verify the updated page and inquiry interaction.
-- [x] Rebuild a more visible navigation logo and extend the connected D/C motif across the page.
-- [x] Add service pages linked from the AI brief and service cards.
-- [x] Add portfolio and case study pages (sample concepts).
-- [x] Remove AI brief feature for Vercel hosting.
-- [ ] Connect inquiry delivery — waiting on the business contact email.
+# 302 Sitekick website
+- [x] Replace Delaware Creative design with the 302 Sitekick marketing homepage.
+- [x] Example website pages, get-started form, terms and privacy drafts.
+- [ ] Real sign-up / checkout and inquiry delivery — waiting on payment setup and a contact email.
+- [ ] Final Terms of Service and Privacy Policy text — waiting on the owner.
