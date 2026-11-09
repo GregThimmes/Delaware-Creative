@@ -12,7 +12,7 @@ const buttonVariants = cva(
         kick: "bg-orange text-orange-foreground font-semibold rounded-full shadow-[var(--shadow-glow)] hover:-translate-y-0.5 hover:bg-orange/90 transition-all",
         navy: "bg-navy text-primary-foreground font-semibold rounded-full hover:-translate-y-0.5 hover:bg-navy-deep transition-all",
         ghostLight: "border border-primary-foreground/30 text-primary-foreground font-semibold rounded-full hover:bg-primary-foreground/10",
-        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        default: "bg-foreground text-background shadow hover:bg-foreground/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
