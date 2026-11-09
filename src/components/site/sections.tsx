@@ -220,8 +220,8 @@ export function Counties() {
         <DelawareMap className="mt-10 hidden h-64 text-navy lg:block" />
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-        {counties.map((c, i) => <article key={c.name} className="group card-lift overflow-hidden rounded-2xl border border-border bg-card">
-          <div className="relative aspect-[4/3] overflow-hidden">
+        {counties.map((c, i) => <article key={c.name} className="group card-lift overflow-hidden rounded-2xl border border-border bg-card lg:grid lg:grid-cols-[45%_1fr]">
+          <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
             <img src={c.image} alt={c.alt} loading="lazy" width={1024} height={768} className="size-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <span className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-background/95 py-1.5 pl-1.5 pr-3 text-xs font-bold text-navy"><span className="flex size-6 items-center justify-center rounded-full bg-navy"><DelawareMap active={i} className="h-5 text-primary-foreground" /></span>{["Upstate", "Central", "Downstate"][i]}</span>
           </div>
