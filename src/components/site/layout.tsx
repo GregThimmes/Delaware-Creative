@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 import { brand, navLinks } from "@/lib/site-content";
 
 export function Logo({ light = false }: { light?: boolean }) {
-  return <span className="inline-flex items-center gap-2.5" aria-label={brand.name} role="img">
-    <span aria-hidden="true" className={`relative inline-flex h-9 items-center rounded-lg px-2 font-display text-xl font-extrabold tracking-tight ${light ? "bg-primary-foreground text-navy" : "bg-primary text-primary-foreground ai-glow-blue"}`}>
-      302<MousePointer2 className="absolute -right-2 -bottom-2 size-4 fill-orange text-orange" strokeWidth={2.5} />
-    </span>
-    <span aria-hidden="true" className={`font-display text-lg font-extrabold tracking-[0.12em] ${light ? "text-primary-foreground" : "text-foreground"}`}>SITEKICK</span>
+  return <span aria-label={`${brand.name} — Delaware license plate`} role="img" className={`relative inline-flex h-12 w-[150px] flex-col items-center justify-between rounded-md border-2 border-orange bg-navy px-2 py-0.5 shadow-[inset_0_0_0_2px_var(--navy-deep)] ${light ? "" : "ai-glow-blue"}`}>
+    <span aria-hidden="true" className="absolute left-1.5 top-1.5 size-1 rounded-full bg-orange/70" />
+    <span aria-hidden="true" className="absolute right-1.5 top-1.5 size-1 rounded-full bg-orange/70" />
+    <span aria-hidden="true" className="font-display text-[8px] font-extrabold leading-none tracking-[0.35em] text-orange pt-0.5">DELAWARE</span>
+    <span aria-hidden="true" className="font-display text-[19px] font-extrabold leading-none tracking-tight text-orange">302<span className="text-cream">SiteKick</span></span>
+    <span aria-hidden="true" className="text-[7px] font-semibold italic leading-none tracking-wider text-cream/80 pb-0.5">The First State</span>
+    <MousePointer2 aria-hidden="true" className="absolute -right-2 -bottom-2 size-4 fill-orange text-orange" strokeWidth={2.5} />
   </span>;
 }
 
