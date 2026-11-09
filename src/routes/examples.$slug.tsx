@@ -24,12 +24,12 @@ function ExamplePage() {
   const others = examples.filter(e => e.slug !== example.slug);
   return <SiteShell>
     <section className="bg-cream py-14 md:py-20"><div className="wrap">
-      <Link to="/" hash="examples" className="inline-flex items-center gap-2 text-sm font-semibold text-slate hover:text-orange"><ArrowLeft className="size-4" /> All examples</Link>
-      <p className="eyebrow mt-8 text-orange">{example.category} · Example website</p>
-      <h1 className="section-title mt-3">{example.name}</h1>
-      <p className="mt-4 max-w-2xl text-lg text-slate">{example.description}</p>
+      <Link to="/" hash="examples" className="inline-flex items-center gap-2 text-sm font-semibold text-buff-foreground/70 hover:text-buff-deep"><ArrowLeft className="size-4" /> All examples</Link>
+      <p className="eyebrow mt-8 text-buff-deep">{example.category} · Example website</p>
+      <h1 className="section-title mt-3 text-buff-foreground">{example.name}</h1>
+      <p className="mt-4 max-w-2xl text-lg text-buff-foreground/75">{example.description}</p>
       <div className="browser-frame mt-10"><BrowserBar url={`${example.slug.replace(/-/g, "")}.com`} /><img src={example.image} alt={`${example.name} sample website homepage`} width={1280} height={896} className="w-full" /></div>
-      <p className="mt-4 text-xs text-muted-foreground">A sample website for a fictional business, showing what a $20/month Sitekick site can look like.</p>
+      <p className="mt-4 text-xs text-buff-foreground/60">A sample website for a fictional business, showing what a $20/month Sitekick site can look like.</p>
     </div></section>
     <section className="py-16 md:py-20"><div className="wrap grid gap-10 md:grid-cols-2">
       <div><h2 className="text-2xl font-extrabold">What’s on the site</h2><ul className="mt-5 flex flex-wrap gap-2">{example.pages.map(p => <li key={p} className="rounded-full bg-mist px-4 py-2 text-sm font-semibold">{p}</li>)}</ul></div>

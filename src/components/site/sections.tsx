@@ -151,7 +151,7 @@ export function Pricing() {
           {pricing.included.map(item => <li key={item} className="flex items-start gap-3 text-[15px]"><span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-navy text-cream"><Check className="size-3.5" strokeWidth={3} /></span>{item}</li>)}
         </ul>
         <Button asChild variant="navy" size="cta" className="mt-8 w-full"><Link to="/get-started">Get Started for $20/Month <ArrowRight /></Link></Button>
-        <p className="mt-5 rounded-xl bg-background px-4 py-3 text-center text-sm font-semibold">{pricing.commitment}</p>
+        <p className="mt-5 rounded-xl bg-background px-4 py-3 text-center text-sm font-semibold text-foreground">{pricing.commitment}</p>
         <p className="mt-3 text-center text-xs text-buff-foreground/70">{pricing.domainNote}</p>
       </div>
     </div>
@@ -193,18 +193,18 @@ export function FinalCTA() {
   return <section className="bg-cream py-20 md:py-28">
     <div className="wrap grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
       <div>
-        <h2 className="section-title">Ready to give your business a better online presence?</h2>
-        <p className="mt-5 max-w-xl text-lg text-slate">You don’t need an expensive agency or a complicated project. You just need a website that works.</p>
-        <Button asChild variant="kick" size="cta" className="mt-8"><Link to="/get-started">Get My Website for $20/Month <ArrowRight /></Link></Button>
-        <p className="mt-6 text-sm font-semibold text-slate">302 Sitekick. Your Delaware website, made simple.</p>
+        <h2 className="section-title text-buff-foreground">Ready to give your business a better online presence?</h2>
+        <p className="mt-5 max-w-xl text-lg text-buff-foreground/75">You don’t need an expensive agency or a complicated project. You just need a website that works.</p>
+        <Button asChild variant="navy" size="cta" className="mt-8"><Link to="/get-started">Get My Website for $20/Month <ArrowRight /></Link></Button>
+        <p className="mt-6 text-sm font-semibold text-buff-foreground/75">302 Sitekick. Your Delaware website, made simple.</p>
       </div>
       <div aria-hidden="true" className="relative mx-auto w-full max-w-sm">
         <div className="browser-frame rotate-2">
           <BrowserBar url="yourbusiness.com" />
-          <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-foreground">Your business, online<span className="caret text-orange">|</span></div><div className="h-9 w-32 rounded-full bg-orange" /></div>
+          <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-buff-foreground">Your business, online<span className="caret text-buff-deep">|</span></div><div className="h-9 w-32 rounded-full bg-buff-deep" /></div>
         </div>
-        <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-orange text-foreground" strokeWidth={1.5} />
-        <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-background text-orange" />
+        <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-buff-deep text-buff-foreground" strokeWidth={1.5} />
+        <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-buff-foreground text-cream" />
       </div>
     </div>
   </section>;
