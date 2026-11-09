@@ -152,7 +152,7 @@ export function Pricing() {
         </ul>
         <Button asChild variant="navy" size="cta" className="mt-8 w-full"><Link to="/get-started">Get Started for $20/Month <ArrowRight /></Link></Button>
         <p className="mt-5 rounded-xl bg-background px-4 py-3 text-center text-sm font-semibold text-foreground">{pricing.commitment}</p>
-        <p className="mt-3 text-center text-xs text-buff-foreground/70">{pricing.domainNote}</p>
+        <p className="mt-3 text-center text-xs text-buff-foreground/85">{pricing.domainNote}</p>
       </div>
     </div>
   </section>;

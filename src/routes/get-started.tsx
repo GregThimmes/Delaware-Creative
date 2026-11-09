@@ -32,7 +32,7 @@ function GetStarted() {
   return <SiteShell>
     <section className="bg-cream py-16 md:py-24"><div className="wrap grid gap-12 lg:grid-cols-[1fr_1.2fr]">
       <div>
-        <p className="eyebrow text-buff-deep">Step 1</p>
+        <p className="eyebrow text-buff-foreground">Step 1</p>
         <h1 className="section-title mt-3 text-buff-foreground">Tell us about your business.</h1>
         <p className="mt-4 text-lg text-buff-foreground/75">Share the basics and we’ll take it from there. ${pricing.monthly}/month, no setup fee.</p>
         <p className="mt-6 text-sm text-buff-foreground/75">{pricing.commitment}</p>

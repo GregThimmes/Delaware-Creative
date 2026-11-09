@@ -25,7 +25,7 @@ function ExamplePage() {
   return <SiteShell>
     <section className="bg-cream py-14 md:py-20"><div className="wrap">
       <Link to="/" hash="examples" className="inline-flex items-center gap-2 text-sm font-semibold text-buff-foreground/70 hover:text-buff-deep"><ArrowLeft className="size-4" /> All examples</Link>
-      <p className="eyebrow mt-8 text-buff-deep">{example.category} · Example website</p>
+      <p className="eyebrow mt-8 text-buff-foreground">{example.category} · Example website</p>
       <h1 className="section-title mt-3 text-buff-foreground">{example.name}</h1>
       <p className="mt-4 max-w-2xl text-lg text-buff-foreground/75">{example.description}</p>
       <div className="browser-frame mt-10"><BrowserBar url={`${example.slug.replace(/-/g, "")}.com`} /><img src={example.image} alt={`${example.name} sample website homepage`} width={1280} height={896} className="w-full" /></div>
