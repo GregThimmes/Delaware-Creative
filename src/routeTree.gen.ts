@@ -10,63 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
-import { Route as WorkIndexRouteImport } from './routes/work.index'
-import { Route as WorkSlugRouteImport } from './routes/work.$slug'
+import { Route as GetStartedRouteImport } from './routes/get-started'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ExamplesSlugRouteImport } from './routes/examples.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/services/$slug',
-  path: '/services/$slug',
+const GetStartedRoute = GetStartedRouteImport.update({
+  id: '/get-started',
+  path: '/get-started',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkIndexRoute = WorkIndexRouteImport.update({
-  id: '/work/',
-  path: '/work/',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkSlugRoute = WorkSlugRouteImport.update({
-  id: '/work/$slug',
-  path: '/work/$slug',
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExamplesSlugRoute = ExamplesSlugRouteImport.update({
+  id: '/examples/$slug',
+  path: '/examples/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/services/$slug': typeof ServicesSlugRoute
-  '/work/$slug': typeof WorkSlugRoute
-  '/work/': typeof WorkIndexRoute
+  '/get-started': typeof GetStartedRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
+  '/examples/$slug': typeof ExamplesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/services/$slug': typeof ServicesSlugRoute
-  '/work/$slug': typeof WorkSlugRoute
-  '/work': typeof WorkIndexRoute
+  '/get-started': typeof GetStartedRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
+  '/examples/$slug': typeof ExamplesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/services/$slug': typeof ServicesSlugRoute
-  '/work/$slug': typeof WorkSlugRoute
-  '/work/': typeof WorkIndexRoute
+  '/get-started': typeof GetStartedRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
+  '/examples/$slug': typeof ExamplesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/services/$slug' | '/work/$slug' | '/work/'
+  fullPaths: '/' | '/get-started' | '/privacy' | '/terms' | '/examples/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/services/$slug' | '/work/$slug' | '/work'
-  id: '__root__' | '/' | '/services/$slug' | '/work/$slug' | '/work/'
+  to: '/' | '/get-started' | '/privacy' | '/terms' | '/examples/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/get-started'
+    | '/privacy'
+    | '/terms'
+    | '/examples/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ServicesSlugRoute: typeof ServicesSlugRoute
-  WorkSlugRoute: typeof WorkSlugRoute
-  WorkIndexRoute: typeof WorkIndexRoute
+  GetStartedRoute: typeof GetStartedRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
+  ExamplesSlugRoute: typeof ExamplesSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,25 +94,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/$slug': {
-      id: '/services/$slug'
-      path: '/services/$slug'
-      fullPath: '/services/$slug'
-      preLoaderRoute: typeof ServicesSlugRouteImport
+    '/get-started': {
+      id: '/get-started'
+      path: '/get-started'
+      fullPath: '/get-started'
+      preLoaderRoute: typeof GetStartedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/': {
-      id: '/work/'
-      path: '/work'
-      fullPath: '/work/'
-      preLoaderRoute: typeof WorkIndexRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work/$slug': {
-      id: '/work/$slug'
-      path: '/work/$slug'
-      fullPath: '/work/$slug'
-      preLoaderRoute: typeof WorkSlugRouteImport
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/examples/$slug': {
+      id: '/examples/$slug'
+      path: '/examples/$slug'
+      fullPath: '/examples/$slug'
+      preLoaderRoute: typeof ExamplesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -104,9 +127,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ServicesSlugRoute: ServicesSlugRoute,
-  WorkSlugRoute: WorkSlugRoute,
-  WorkIndexRoute: WorkIndexRoute,
+  GetStartedRoute: GetStartedRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
+  ExamplesSlugRoute: ExamplesSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
