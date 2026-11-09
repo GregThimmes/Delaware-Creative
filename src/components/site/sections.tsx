@@ -18,10 +18,10 @@ export function BrowserBar({ url }: { url: string }) {
 }
 
 export function Hero() {
-  return <section className="relative overflow-hidden bg-navy text-primary-foreground">
-    <DelawareMap className="pointer-events-none absolute -right-10 -top-10 h-[130%] text-primary-foreground opacity-[0.07] lg:right-[38%]" />
-    <div className="wrap relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr]">
-      <div className="fade-up">
+  return <section className="grid bg-navy text-primary-foreground lg:min-h-[calc(100vh-80px)] lg:grid-cols-2">
+    <div className="relative flex items-center overflow-hidden px-5 py-16 md:px-12 md:py-20 xl:pl-[max(2rem,calc((100vw-1200px)/2+2rem))]">
+      <DelawareMap className="pointer-events-none absolute -right-16 -top-10 h-[130%] text-primary-foreground opacity-[0.07]" />
+      <div className="fade-up relative max-w-xl">
         <p className="eyebrow flex items-center gap-2 text-orange"><span className="size-1.5 rounded-full bg-orange" />Proudly serving Delaware businesses</p>
         <h1 className="mt-5 font-display text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.04] tracking-[-0.035em]">Your business deserves a great website. <span className="text-orange">Getting one shouldn’t be complicated.</span></h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80">We build professional websites for Delaware small businesses without the big upfront cost, complicated process, or expensive agency fees.</p>
@@ -36,13 +36,11 @@ export function Hero() {
         <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground/80"><span>New Castle</span><span className="text-orange">•</span><span>Kent</span><span className="text-orange">•</span><span>Sussex</span></p>
         <p className="mt-3 text-sm text-primary-foreground/65">Local service businesses. Simple monthly pricing. One less thing to worry about.</p>
       </div>
-      <div className="relative fade-up [animation-delay:.15s]">
-        <div className="rounded-[1.75rem] bg-cream p-3 shadow-[var(--shadow-lift)]">
-          <img src={heroDevices} alt="Laptop and phone showing a sample website for First State Lawn & Landscape" width={1408} height={1056} fetchPriority="high" className="w-full rounded-[1.25rem]" />
-        </div>
-        <div aria-hidden="true" className="absolute -bottom-5 -left-3 flex items-center gap-2 rounded-full bg-background px-4 py-2.5 text-sm font-semibold text-navy shadow-[var(--shadow-card)] md:-left-6">
-          <MousePointer2 className="size-4 fill-orange text-orange" /> Sample site, built by Sitekick
-        </div>
+    </div>
+    <div className="relative flex items-center justify-center bg-cream p-6 md:p-12">
+      <img src={heroDevices} alt="Laptop and phone showing a sample website for First State Lawn & Landscape" width={1408} height={1056} fetchPriority="high" className="fade-up w-full max-w-2xl rounded-[1.25rem] shadow-[var(--shadow-lift)] [animation-delay:.15s]" />
+      <div aria-hidden="true" className="absolute bottom-6 left-6 flex items-center gap-2 rounded-full bg-background px-4 py-2.5 text-sm font-semibold text-navy shadow-[var(--shadow-card)] md:bottom-10 md:left-10">
+        <MousePointer2 className="size-4 fill-orange text-orange" /> Sample site, built by Sitekick
       </div>
     </div>
   </section>;
@@ -107,17 +105,18 @@ export function WebsiteExamples() {
 const stepIcons: LucideIcon[] = [ClipboardList, LayoutTemplate, Rocket];
 export function HowItWorks() {
   return <section id="how-it-works" className="bg-mist py-20 md:py-28">
-    <div className="wrap">
-      <h2 className="section-title text-center">Three simple steps. <span className="text-orange">That’s it.</span></h2>
-      <ol className="relative mt-14 grid gap-6 md:grid-cols-3">
-        <div aria-hidden="true" className="absolute left-[16%] right-[16%] top-10 hidden border-t-2 border-dashed border-navy/25 md:block" />
+    <div className="wrap grid gap-12 lg:grid-cols-2">
+      <div className="lg:sticky lg:top-28 lg:self-start">
+        <h2 className="section-title">Three simple steps. <span className="text-orange">That’s it.</span></h2>
+        <p className="mt-6 font-display text-xl font-bold">You focus on running your business. We’ll take care of the website.</p>
+      </div>
+      <ol className="grid gap-5">
         {steps.map((s, i) => { const Icon = stepIcons[i]!; return <li key={s.title} className="relative rounded-2xl bg-background p-7 shadow-[var(--shadow-card)]">
           <div className="flex items-center gap-4"><span className="flex size-14 items-center justify-center rounded-2xl bg-navy text-primary-foreground"><Icon className="size-6" /></span><span className="eyebrow text-orange">Step {i + 1}</span></div>
           <h3 className="mt-5 text-xl font-extrabold">{s.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-slate">{s.text}</p>
         </li>; })}
       </ol>
-      <p className="mt-12 text-center font-display text-xl font-bold">You focus on running your business. We’ll take care of the website.</p>
     </div>
   </section>;
 }
@@ -125,9 +124,9 @@ export function HowItWorks() {
 const featureIcons: LucideIcon[] = [Brush, FileText, Smartphone, Globe, Sparkles, Mail, Search, Lock, RefreshCw, LifeBuoy];
 export function Features() {
   return <section id="included" className="bg-background py-20 md:py-28">
-    <div className="wrap">
-      <h2 className="section-title max-w-2xl">Everything you need to look professional online.</h2>
-      <ul className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="wrap grid gap-12 lg:grid-cols-2">
+      <h2 className="section-title lg:sticky lg:top-28 lg:self-start">Everything you need to look professional online.</h2>
+      <ul className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
         {features.map((f, i) => { const Icon = featureIcons[i]!; return <li key={f.title} className="border-t-2 border-navy/10 pt-5">
           <Icon className="size-6 text-orange" strokeWidth={1.75} />
           <h3 className="mt-3 text-base font-bold">{f.title}</h3>
@@ -140,12 +139,12 @@ export function Features() {
 
 export function Pricing() {
   return <section id="pricing" className="bg-navy py-20 text-primary-foreground md:py-28">
-    <div className="wrap">
-      <div className="mx-auto max-w-2xl text-center">
+    <div className="wrap grid items-center gap-12 lg:grid-cols-2">
+      <div>
         <h2 className="section-title">A great website shouldn’t cost a fortune.</h2>
         <p className="mt-4 text-lg text-primary-foreground/80">One simple price. Everything you need to get your business online.</p>
       </div>
-      <div className="mx-auto mt-12 max-w-lg rounded-3xl bg-cream p-8 text-navy shadow-[var(--shadow-lift)] md:p-10">
+      <div className="w-full max-w-lg justify-self-center rounded-3xl lg:justify-self-end bg-cream p-8 text-navy shadow-[var(--shadow-lift)] md:p-10">
         <p className="text-center"><span className="font-display text-6xl font-extrabold">${pricing.monthly}</span><span className="text-xl font-bold text-slate"> / month</span></p>
         <p className="mt-2 text-center font-semibold text-slate">No setup fee. No complicated pricing.</p>
         <ul className="mt-8 grid gap-3">
@@ -162,14 +161,16 @@ export function Pricing() {
 const industryIcons: LucideIcon[] = [Leaf, Sparkles, Hammer, PaintRoller, Droplets, Car, Home, Briefcase];
 export function Industries() {
   return <section className="bg-background py-20 md:py-28">
-    <div className="wrap">
-      <h2 className="section-title max-w-3xl">Built for the people who keep Delaware running.</h2>
-      <ul className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
+    <div className="wrap grid gap-12 lg:grid-cols-2">
+      <div>
+      <h2 className="section-title">Built for the people who keep Delaware running.</h2>
+      <p className="mt-6 text-slate">Don’t see your business? <Link to="/get-started" className="font-semibold text-navy underline decoration-orange decoration-2 underline-offset-4 hover:text-orange">Let’s talk.</Link></p>
+      </div>
+      <ul className="grid grid-cols-2 gap-3">
         {industries.map((name, i) => { const Icon = industryIcons[i]!; return <li key={name} className="flex items-center gap-3 rounded-2xl border border-border bg-muted px-4 py-5 font-semibold transition-colors hover:border-orange hover:bg-cream">
           <Icon className="size-5 shrink-0 text-orange" />{name}
         </li>; })}
       </ul>
-      <p className="mt-8 text-slate">Don’t see your business? <Link to="/get-started" className="font-semibold text-navy underline decoration-orange decoration-2 underline-offset-4 hover:text-orange">Let’s talk.</Link></p>
     </div>
   </section>;
 }
@@ -211,18 +212,16 @@ export function FinalCTA() {
 
 export function Counties() {
   return <section id="delaware" className="bg-background py-20 md:py-28">
-    <div className="wrap">
-      <div className="grid items-end gap-8 md:grid-cols-[auto_1fr]">
-        <DelawareMap className="hidden h-40 text-navy md:block" />
-        <div>
-          <p className="eyebrow text-orange">Three counties. One local team.</p>
-          <h2 className="section-title mt-3 max-w-3xl">From the Brandywine to the beaches.</h2>
-          <p className="mt-4 max-w-2xl text-lg text-slate">Wherever you work in the First State, we know the towns your customers live in — and we build your site for them.</p>
-        </div>
+    <div className="wrap grid gap-12 lg:grid-cols-2">
+      <div className="lg:sticky lg:top-28 lg:self-start">
+        <p className="eyebrow text-orange">Three counties. One local team.</p>
+        <h2 className="section-title mt-3">From the Brandywine to the beaches.</h2>
+        <p className="mt-4 text-lg text-slate">Wherever you work in the First State, we know the towns your customers live in — and we build your site for them.</p>
+        <DelawareMap className="mt-10 hidden h-64 text-navy lg:block" />
       </div>
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {counties.map((c, i) => <article key={c.name} className="group card-lift overflow-hidden rounded-2xl border border-border bg-card">
-          <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+        {counties.map((c, i) => <article key={c.name} className="group card-lift overflow-hidden rounded-2xl border border-border bg-card lg:grid lg:grid-cols-[45%_1fr]">
+          <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
             <img src={c.image} alt={c.alt} loading="lazy" width={1024} height={768} className="size-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <span className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-background/95 py-1.5 pl-1.5 pr-3 text-xs font-bold text-navy"><span className="flex size-6 items-center justify-center rounded-full bg-navy"><DelawareMap active={i} className="h-5 text-primary-foreground" /></span>{["Upstate", "Central", "Downstate"][i]}</span>
           </div>
