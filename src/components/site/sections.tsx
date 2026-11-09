@@ -146,7 +146,7 @@ export function Pricing() {
       </div>
       <div className="w-full max-w-lg justify-self-center rounded-3xl lg:justify-self-end bg-cream p-8 text-buff-foreground shadow-[var(--shadow-lift)] md:p-10">
         <p className="text-center"><span className="font-display text-6xl font-extrabold">${pricing.monthly}</span><span className="text-xl font-bold text-buff-foreground/70"> / month</span></p>
-        <p className="mt-2 text-center font-semibold text-buff-foreground/70">No setup fee. No complicated pricing.</p>
+        <p className="mt-2 text-center font-semibold text-buff-foreground/85">No setup fee. No complicated pricing.</p>
         <ul className="mt-8 grid gap-3">
           {pricing.included.map(item => <li key={item} className="flex items-start gap-3 text-[15px]"><span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-navy text-cream"><Check className="size-3.5" strokeWidth={3} /></span>{item}</li>)}
         </ul>
@@ -201,7 +201,7 @@ export function FinalCTA() {
       <div aria-hidden="true" className="relative mx-auto w-full max-w-sm">
         <div className="browser-frame rotate-2">
           <BrowserBar url="yourbusiness.com" />
-          <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-buff-foreground">Your business, online<span className="caret text-buff-deep">|</span></div><div className="h-9 w-32 rounded-full bg-buff-deep" /></div>
+          <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-foreground">Your business, online<span className="caret text-orange">|</span></div><div className="h-9 w-32 rounded-full bg-orange" /></div>
         </div>
         <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-buff-deep text-buff-foreground" strokeWidth={1.5} />
         <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-buff-foreground text-cream" />

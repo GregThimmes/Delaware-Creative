@@ -49,7 +49,7 @@ export function Footer() {
         <Link to="/privacy" className="text-primary-foreground/80 hover:text-primary-foreground">Privacy Policy</Link>
       </nav>
     </div>
-    <div className="border-t border-primary-foreground/10"><p className="wrap py-5 text-xs text-primary-foreground/60">© 2026 302 Sitekick. All rights reserved.</p></div>
+    <div className="border-t border-primary-foreground/10"><p className="wrap py-5 text-xs text-primary-foreground/75">© 2026 302 Sitekick. All rights reserved.</p></div>
   </footer>;
 }
 
