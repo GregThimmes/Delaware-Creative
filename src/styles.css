@@ -32,6 +32,8 @@
   --color-orange: var(--orange);
   --color-orange-foreground: var(--orange-foreground);
   --color-cream: var(--cream);
+  --color-buff-foreground: var(--buff-foreground);
+  --color-buff-deep: var(--buff-deep);
   --color-mist: var(--mist);
   --color-slate: var(--slate);
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
@@ -80,7 +82,9 @@
   --navy-deep: oklch(0.11 0.032 258);
   --orange: oklch(0.79 0.115 78);
   --orange-foreground: oklch(0.26 0.06 257);
-  --cream: oklch(0.19 0.022 82);
+  --cream: oklch(0.915 0.042 83);
+  --buff-foreground: oklch(0.28 0.06 257);
+  --buff-deep: oklch(0.52 0.11 68);
   --mist: oklch(0.22 0.04 256);
   --slate: oklch(0.8 0.022 250);
   --glow-blue: oklch(0.62 0.14 252);
