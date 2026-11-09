@@ -9,7 +9,7 @@ export function Logo({ light = false }: { light?: boolean }) {
     <span aria-hidden="true" className={`relative inline-flex h-9 items-center rounded-lg px-2 font-display text-xl font-extrabold tracking-tight ${light ? "bg-primary-foreground text-navy" : "bg-navy text-primary-foreground"}`}>
       302<MousePointer2 className="absolute -right-2 -bottom-2 size-4 fill-orange text-orange" strokeWidth={2.5} />
     </span>
-    <span aria-hidden="true" className={`font-display text-lg font-extrabold tracking-[0.12em] ${light ? "text-primary-foreground" : "text-navy"}`}>SITEKICK</span>
+    <span aria-hidden="true" className={`font-display text-lg font-extrabold tracking-[0.12em] ${light ? "text-primary-foreground" : "text-foreground"}`}>SITEKICK</span>
   </span>;
 }
 
@@ -27,7 +27,7 @@ export function Header() {
       </div>
     </div>
     {open && <nav aria-label="Mobile" className="wrap flex flex-col gap-1 border-t border-border pb-5 pt-3 lg:hidden">
-      {navLinks.map(l => <Link key={l.id} to="/" hash={l.id} onClick={() => setOpen(false)} className="rounded-lg px-2 py-3 font-semibold text-navy hover:bg-muted">{l.label}</Link>)}
+      {navLinks.map(l => <Link key={l.id} to="/" hash={l.id} onClick={() => setOpen(false)} className="rounded-lg px-2 py-3 font-semibold text-foreground hover:bg-muted">{l.label}</Link>)}
       <Button asChild variant="kick" size="cta" className="mt-2"><Link to="/get-started" onClick={() => setOpen(false)}>Get My Website</Link></Button>
     </nav>}
   </header>;
