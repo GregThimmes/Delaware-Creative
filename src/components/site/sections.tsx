@@ -39,7 +39,7 @@ export function Hero() {
     </div>
     <div className="relative flex items-center justify-center bg-cream p-6 md:p-12">
       <img src={heroDevices} alt="Laptop and phone showing a sample website for First State Lawn & Landscape" width={1408} height={1056} fetchPriority="high" className="fade-up w-full max-w-2xl rounded-[1.25rem] shadow-[var(--shadow-lift)] [animation-delay:.15s]" />
-      <div aria-hidden="true" className="absolute bottom-6 left-6 flex items-center gap-2 rounded-full bg-background px-4 py-2.5 text-sm font-semibold text-navy shadow-[var(--shadow-card)] md:bottom-10 md:left-10">
+      <div aria-hidden="true" className="absolute bottom-6 left-6 flex items-center gap-2 rounded-full bg-background px-4 py-2.5 text-sm font-semibold text-foreground shadow-[var(--shadow-card)] md:bottom-10 md:left-10">
         <MousePointer2 className="size-4 fill-orange text-orange" /> Sample site, built by Sitekick
       </div>
     </div>
@@ -69,7 +69,7 @@ export function ProblemSolution() {
         <figure className="browser-frame">
           <BrowserBar url="firststatelawn.com" />
           <img src={examples[0]!.image} alt="A polished sample landscaping website" loading="lazy" width={1280} height={896} className="h-64 w-full object-cover object-top" />
-          <figcaption className="px-5 py-4 text-sm font-semibold text-navy">After: a professional site customers trust.</figcaption>
+          <figcaption className="px-5 py-4 text-sm font-semibold text-foreground">After: a professional site customers trust.</figcaption>
         </figure>
       </div>
       <p className="mt-12 text-center font-display text-2xl font-extrabold md:text-3xl">You handle the business. <span className="text-orange">We’ll handle the website.</span></p>
@@ -93,7 +93,7 @@ export function WebsiteExamples() {
             <p className="eyebrow text-slate">{ex.category}</p>
             <h3 className="mt-2 text-xl font-extrabold">{ex.name}</h3>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-slate">{ex.description}</p>
-            <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy group-hover:text-orange">Explore Example <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-orange">Explore Example <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
           </div>
         </Link>)}
       </div>
@@ -144,7 +144,7 @@ export function Pricing() {
         <h2 className="section-title">A great website shouldn’t cost a fortune.</h2>
         <p className="mt-4 text-lg text-primary-foreground/80">One simple price. Everything you need to get your business online.</p>
       </div>
-      <div className="w-full max-w-lg justify-self-center rounded-3xl lg:justify-self-end bg-cream p-8 text-navy shadow-[var(--shadow-lift)] md:p-10">
+      <div className="w-full max-w-lg justify-self-center rounded-3xl lg:justify-self-end bg-cream p-8 text-foreground shadow-[var(--shadow-lift)] md:p-10">
         <p className="text-center"><span className="font-display text-6xl font-extrabold">${pricing.monthly}</span><span className="text-xl font-bold text-slate"> / month</span></p>
         <p className="mt-2 text-center font-semibold text-slate">No setup fee. No complicated pricing.</p>
         <ul className="mt-8 grid gap-3">
@@ -164,7 +164,7 @@ export function Industries() {
     <div className="wrap grid gap-12 lg:grid-cols-2">
       <div>
       <h2 className="section-title">Built for the people who keep Delaware running.</h2>
-      <p className="mt-6 text-slate">Don’t see your business? <Link to="/get-started" className="font-semibold text-navy underline decoration-orange decoration-2 underline-offset-4 hover:text-orange">Let’s talk.</Link></p>
+      <p className="mt-6 text-slate">Don’t see your business? <Link to="/get-started" className="font-semibold text-foreground underline decoration-orange decoration-2 underline-offset-4 hover:text-orange">Let’s talk.</Link></p>
       </div>
       <ul className="grid grid-cols-2 gap-3">
         {industries.map((name, i) => { const Icon = industryIcons[i]!; return <li key={name} className="flex items-center gap-3 rounded-2xl border border-border bg-muted px-4 py-5 font-semibold transition-colors hover:border-orange hover:bg-cream">
@@ -201,9 +201,9 @@ export function FinalCTA() {
       <div aria-hidden="true" className="relative mx-auto w-full max-w-sm">
         <div className="browser-frame rotate-2">
           <BrowserBar url="yourbusiness.com" />
-          <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-navy">Your business, online<span className="caret text-orange">|</span></div><div className="h-9 w-32 rounded-full bg-orange" /></div>
+          <div className="space-y-3 p-6"><div className="h-4 w-2/3 rounded bg-navy" /><div className="h-3 w-full rounded bg-border" /><div className="h-3 w-5/6 rounded bg-border" /><div className="mt-5 flex items-center gap-1 text-sm font-bold text-foreground">Your business, online<span className="caret text-orange">|</span></div><div className="h-9 w-32 rounded-full bg-orange" /></div>
         </div>
-        <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-orange text-navy" strokeWidth={1.5} />
+        <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-orange text-foreground" strokeWidth={1.5} />
         <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-background text-orange" />
       </div>
     </div>
@@ -217,13 +217,13 @@ export function Counties() {
         <p className="eyebrow text-orange">Three counties. One local team.</p>
         <h2 className="section-title mt-3">From the Brandywine to the beaches.</h2>
         <p className="mt-4 text-lg text-slate">Wherever you work in the First State, we know the towns your customers live in — and we build your site for them.</p>
-        <DelawareMap className="mt-10 hidden h-64 text-navy lg:block" />
+        <DelawareMap className="mt-10 hidden h-64 text-foreground lg:block" />
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
         {counties.map((c, i) => <article key={c.name} className="group card-lift overflow-hidden rounded-2xl border border-border bg-card lg:grid lg:grid-cols-[45%_1fr]">
           <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto">
             <img src={c.image} alt={c.alt} loading="lazy" width={1024} height={768} className="size-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <span className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-background/95 py-1.5 pl-1.5 pr-3 text-xs font-bold text-navy"><span className="flex size-6 items-center justify-center rounded-full bg-navy"><DelawareMap active={i} className="h-5 text-primary-foreground" /></span>{["Upstate", "Central", "Downstate"][i]}</span>
+            <span className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-background/95 py-1.5 pl-1.5 pr-3 text-xs font-bold text-foreground"><span className="flex size-6 items-center justify-center rounded-full bg-navy"><DelawareMap active={i} className="h-5 text-primary-foreground" /></span>{["Upstate", "Central", "Downstate"][i]}</span>
           </div>
           <div className="p-6">
             <h3 className="text-xl font-extrabold">{c.name}</h3>

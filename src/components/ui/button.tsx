@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        kick: "bg-orange text-orange-foreground font-semibold rounded-full shadow-[var(--shadow-card)] hover:-translate-y-0.5 hover:bg-orange/90 transition-all",
+        kick: "bg-orange text-orange-foreground font-semibold rounded-full shadow-[var(--shadow-glow)] hover:-translate-y-0.5 hover:bg-orange/90 transition-all",
         navy: "bg-navy text-primary-foreground font-semibold rounded-full hover:-translate-y-0.5 hover:bg-navy-deep transition-all",
         ghostLight: "border border-primary-foreground/30 text-primary-foreground font-semibold rounded-full hover:bg-primary-foreground/10",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
