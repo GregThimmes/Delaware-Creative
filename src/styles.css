@@ -75,55 +75,54 @@
 :root {
   --radius: 0.75rem;
   color-scheme: dark;
-  /* Delaware state colors — Colonial Blue #33517B and Buff #CD9A50 — read as an
-   * AI-dark palette: colonial blue owns the surfaces and the electric glow,
-   * buff owns the CTAs, highlights and warm text. */
-  --navy: oklch(0.26 0.055 257);
-  --navy-deep: oklch(0.11 0.032 258);
-  --orange: oklch(0.79 0.115 78);
-  --orange-foreground: oklch(0.26 0.06 257);
-  --cream: oklch(0.915 0.042 83);
-  --buff-foreground: oklch(0.28 0.06 257);
-  --buff-deep: oklch(0.47 0.11 65);
-  --mist: oklch(0.22 0.04 256);
-  --slate: oklch(0.8 0.022 250);
-  --glow-blue: oklch(0.62 0.14 252);
-  --background: oklch(0.145 0.042 258);
-  --foreground: oklch(0.955 0.014 82);
-  --card: oklch(0.19 0.038 258);
-  --card-foreground: oklch(0.955 0.014 82);
-  --popover: oklch(0.19 0.038 258);
-  --popover-foreground: oklch(0.955 0.014 82);
-  --primary: oklch(0.6 0.14 252);
-  --primary-foreground: oklch(0.97 0.008 82);
-  --secondary: oklch(0.23 0.045 256);
-  --secondary-foreground: oklch(0.955 0.014 82);
-  --muted: oklch(0.2 0.035 257);
-  --muted-foreground: oklch(0.74 0.028 85);
-  --accent: oklch(0.25 0.05 256);
-  --accent-foreground: oklch(0.955 0.014 82);
+  /* Delaware "black tag" palette — black and white own the surfaces and text,
+   * Delaware gold-yellow is the single accent (CTAs, highlights, glows). */
+  --navy: oklch(0.19 0 0);
+  --navy-deep: oklch(0.1 0 0);
+  --orange: oklch(0.85 0.16 95);
+  --orange-foreground: oklch(0.16 0 0);
+  --cream: oklch(0.96 0.01 95);
+  --buff-foreground: oklch(0.18 0 0);
+  --buff-deep: oklch(0.6 0.14 90);
+  --mist: oklch(0.24 0 0);
+  --slate: oklch(0.82 0 0);
+  --glow-blue: oklch(0.85 0.16 95);
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.96 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.96 0 0);
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.96 0 0);
+  --primary: oklch(0.96 0 0);
+  --primary-foreground: oklch(0.16 0 0);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: oklch(0.96 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.75 0 0);
+  --accent: oklch(0.25 0 0);
+  --accent-foreground: oklch(0.96 0 0);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.98 0.01 82);
-  --border: oklch(0.32 0.05 256);
-  --input: oklch(0.34 0.05 256);
-  --ring: oklch(0.79 0.115 78);
-  --shadow-card: 0 0 0 1px oklch(0.6 0.14 252 / 14%), 0 16px 40px -16px oklch(0 0 0 / 60%);
-  --shadow-lift: 0 0 0 1px oklch(0.6 0.14 252 / 35%), 0 0 40px -8px oklch(0.6 0.14 252 / 40%), 0 24px 48px -16px oklch(0 0 0 / 70%);
-  --shadow-glow: 0 0 24px -4px oklch(0.79 0.115 78 / 60%);
-  --shadow-glow-blue: 0 0 22px -4px oklch(0.6 0.14 252 / 55%);
-  --chart-1: oklch(0.79 0.115 78);
-  --chart-2: oklch(0.6 0.14 252);
-  --chart-3: oklch(0.8 0.022 250);
-  --chart-4: oklch(0.23 0.045 256);
-  --chart-5: oklch(0.19 0.022 82);
-  --sidebar: oklch(0.145 0.042 258);
-  --sidebar-foreground: oklch(0.955 0.014 82);
-  --sidebar-primary: oklch(0.6 0.14 252);
-  --sidebar-primary-foreground: oklch(0.98 0.01 82);
-  --sidebar-accent: oklch(0.23 0.045 256);
-  --sidebar-accent-foreground: oklch(0.955 0.014 82);
-  --sidebar-border: oklch(0.32 0.05 256);
-  --sidebar-ring: oklch(0.79 0.115 78);
+  --border: oklch(0.3 0 0);
+  --input: oklch(0.33 0 0);
+  --ring: oklch(0.85 0.16 95);
+  --shadow-card: 0 0 0 1px oklch(1 0 0 / 10%), 0 16px 40px -16px oklch(0 0 0 / 60%);
+  --shadow-lift: 0 0 0 1px oklch(0.85 0.16 95 / 40%), 0 0 40px -8px oklch(0.85 0.16 95 / 35%), 0 24px 48px -16px oklch(0 0 0 / 70%);
+  --shadow-glow: 0 0 24px -4px oklch(0.85 0.16 95 / 60%);
+  --shadow-glow-blue: 0 0 22px -4px oklch(0.85 0.16 95 / 45%);
+  --chart-1: oklch(0.85 0.16 95);
+  --chart-2: oklch(0.96 0 0);
+  --chart-3: oklch(0.82 0 0);
+  --chart-4: oklch(0.22 0 0);
+  --chart-5: oklch(0.6 0.14 90);
+  --sidebar: oklch(0.13 0 0);
+  --sidebar-foreground: oklch(0.96 0 0);
+  --sidebar-primary: oklch(0.85 0.16 95);
+  --sidebar-primary-foreground: oklch(0.16 0 0);
+  --sidebar-accent: oklch(0.22 0 0);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(0.3 0 0);
+  --sidebar-ring: oklch(0.85 0.16 95);
 }
 
 @layer base {
