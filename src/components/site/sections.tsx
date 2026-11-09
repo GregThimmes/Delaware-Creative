@@ -6,7 +6,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { examples, faqs, features, industries, pricing, steps } from "@/lib/site-content";
+import { DelawareMap } from "@/components/site/delaware-map";
+import { counties, examples, faqs, features, industries, pricing, steps } from "@/lib/site-content";
 import heroDevices from "@/assets/hero-devices.jpg";
 
 export function BrowserBar({ url }: { url: string }) {
@@ -17,8 +18,9 @@ export function BrowserBar({ url }: { url: string }) {
 }
 
 export function Hero() {
-  return <section className="overflow-hidden bg-navy text-primary-foreground">
-    <div className="wrap grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr]">
+  return <section className="relative overflow-hidden bg-navy text-primary-foreground">
+    <DelawareMap className="pointer-events-none absolute -right-10 -top-10 h-[130%] text-primary-foreground opacity-[0.07] lg:right-[38%]" />
+    <div className="wrap relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr]">
       <div className="fade-up">
         <p className="eyebrow flex items-center gap-2 text-orange"><span className="size-1.5 rounded-full bg-orange" />Proudly serving Delaware businesses</p>
         <h1 className="mt-5 font-display text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[1.04] tracking-[-0.035em]">Your business deserves a great website. <span className="text-orange">Getting one shouldn’t be complicated.</span></h1>
@@ -31,7 +33,8 @@ export function Hero() {
           <Button asChild variant="kick" size="cta"><Link to="/get-started">Get My Website <ArrowRight /></Link></Button>
           <Button asChild variant="ghostLight" size="cta"><Link to="/" hash="examples">See Example Websites</Link></Button>
         </div>
-        <p className="mt-5 text-sm text-primary-foreground/65">Local service businesses. Simple monthly pricing. One less thing to worry about.</p>
+        <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground/80"><span>New Castle</span><span className="text-orange">•</span><span>Kent</span><span className="text-orange">•</span><span>Sussex</span></p>
+        <p className="mt-3 text-sm text-primary-foreground/65">Local service businesses. Simple monthly pricing. One less thing to worry about.</p>
       </div>
       <div className="relative fade-up [animation-delay:.15s]">
         <div className="rounded-[1.75rem] bg-cream p-3 shadow-[var(--shadow-lift)]">
@@ -201,6 +204,34 @@ export function FinalCTA() {
         </div>
         <MousePointer2 className="absolute -bottom-4 right-10 size-10 fill-orange text-navy" strokeWidth={1.5} />
         <BadgeCheck className="absolute -left-4 -top-4 size-12 fill-background text-orange" />
+      </div>
+    </div>
+  </section>;
+}
+
+export function Counties() {
+  return <section id="delaware" className="bg-background py-20 md:py-28">
+    <div className="wrap">
+      <div className="grid items-end gap-8 md:grid-cols-[auto_1fr]">
+        <DelawareMap className="hidden h-40 text-navy md:block" />
+        <div>
+          <p className="eyebrow text-orange">Three counties. One local team.</p>
+          <h2 className="section-title mt-3 max-w-3xl">From the Brandywine to the beaches.</h2>
+          <p className="mt-4 max-w-2xl text-lg text-slate">Wherever you work in the First State, we know the towns your customers live in — and we build your site for them.</p>
+        </div>
+      </div>
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {counties.map((c, i) => <article key={c.name} className="group card-lift overflow-hidden rounded-2xl border border-border bg-card">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <img src={c.image} alt={c.alt} loading="lazy" width={1024} height={768} className="size-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <span className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-background/95 py-1.5 pl-1.5 pr-3 text-xs font-bold text-navy"><span className="flex size-6 items-center justify-center rounded-full bg-navy"><DelawareMap active={i} className="h-5 text-primary-foreground" /></span>{["Upstate", "Central", "Downstate"][i]}</span>
+          </div>
+          <div className="p-6">
+            <h3 className="text-xl font-extrabold">{c.name}</h3>
+            <p className="eyebrow mt-1 text-orange">{c.places}</p>
+            <p className="mt-3 text-sm leading-relaxed text-slate">{c.text}</p>
+          </div>
+        </article>)}
       </div>
     </div>
   </section>;

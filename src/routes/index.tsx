@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/layout";
-import { FAQ, Features, FinalCTA, Hero, HowItWorks, Industries, Pricing, ProblemSolution, WebsiteExamples } from "@/components/site/sections";
+import { Counties, FAQ, Features, FinalCTA, Hero, HowItWorks, Industries, Pricing, ProblemSolution, WebsiteExamples } from "@/components/site/sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -16,6 +16,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return <SiteShell>
-    <Hero /><ProblemSolution /><WebsiteExamples /><HowItWorks /><Features /><Pricing /><Industries /><FAQ /><FinalCTA />
+    <Hero /><Counties /><ProblemSolution /><WebsiteExamples /><HowItWorks /><Features /><Pricing /><Industries /><FAQ /><FinalCTA />
   </SiteShell>;
 }
