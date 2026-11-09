@@ -100,3 +100,13 @@ export const faqs = [
   { q: "Can I cancel?", a: "After your 12-month initial commitment, you can cancel. We’ll walk you through what happens to your site and domain." },
   { q: "What’s included in the $20/month?", a: "Website design and setup, up to five standard pages, mobile-friendly layout, hosting and SSL, basic SEO setup, a contact form, one small content update per quarter, and basic technical support." },
 ];
+
+import newCastle from "@/assets/county-new-castle.jpg";
+import kent from "@/assets/county-kent.jpg";
+import sussex from "@/assets/county-sussex.jpg";
+
+export const counties = [
+  { name: "New Castle County", places: "Wilmington · Newark · Middletown", text: "From the Riverfront to Main Street, businesses up north get a website as sharp as the city.", image: newCastle, alt: "Wilmington skyline over the Christina Riverfront at sunset" },
+  { name: "Kent County", places: "Dover · Smyrna · Milford", text: "Farm stands, trades, and family shops in the heart of the First State, found online.", image: kent, alt: "Historic brick hall with a white clock tower on a green in Dover" },
+  { name: "Sussex County", places: "Rehoboth · Lewes · Georgetown", text: "Beach-town businesses and year-round locals, ready for every visitor searching nearby.", image: sussex, alt: "Rehoboth Beach boardwalk, dunes, and a lighthouse at golden hour" },
+];
