@@ -124,7 +124,75 @@
   --sidebar-accent-foreground: oklch(0.96 0 0);
   --sidebar-border: oklch(0.3 0 0);
   --sidebar-ring: oklch(0.85 0.16 95);
+  /* License-plate logo colors (black tag in dark mode) */
+  --plate-bg: oklch(0.12 0 0);
+  --plate-text: oklch(0.96 0.01 95);
+  --plate-ring: oklch(0.96 0.01 95 / 18%);
 }
+
+/* Light mode — Delaware state colors: colonial blue + buff.
+ * Buff owns the light surfaces, colonial blue owns text, accents and darks. */
+.light {
+  color-scheme: light;
+  --navy: oklch(0.32 0.07 255);
+  --navy-deep: oklch(0.24 0.06 255);
+  --orange: oklch(0.48 0.1 255);
+  --orange-foreground: oklch(0.93 0.05 90);
+  --cream: oklch(0.88 0.07 90);
+  --buff-foreground: oklch(0.3 0.07 255);
+  --buff-deep: oklch(0.55 0.11 80);
+  --mist: oklch(0.9 0.02 250);
+  --slate: oklch(0.42 0.05 255);
+  --glow-blue: oklch(0.48 0.1 255);
+  --background: oklch(0.96 0.015 90);
+  --foreground: oklch(0.3 0.07 255);
+  --card: oklch(0.99 0.005 90);
+  --card-foreground: oklch(0.3 0.07 255);
+  --popover: oklch(0.99 0.005 90);
+  --popover-foreground: oklch(0.3 0.07 255);
+  --primary: oklch(0.3 0.07 255);
+  --primary-foreground: oklch(0.96 0.015 90);
+  --secondary: oklch(0.92 0.03 90);
+  --secondary-foreground: oklch(0.3 0.07 255);
+  --muted: oklch(0.93 0.025 90);
+  --muted-foreground: oklch(0.45 0.05 255);
+  --accent: oklch(0.9 0.04 90);
+  --accent-foreground: oklch(0.3 0.07 255);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 82);
+  --border: oklch(0.86 0.02 250);
+  --input: oklch(0.84 0.02 250);
+  --ring: oklch(0.48 0.1 255);
+  --shadow-card: 0 0 0 1px oklch(0.3 0.07 255 / 8%), 0 16px 40px -16px oklch(0.3 0.07 255 / 25%);
+  --shadow-lift: 0 0 0 1px oklch(0.48 0.1 255 / 30%), 0 0 40px -8px oklch(0.48 0.1 255 / 25%), 0 24px 48px -16px oklch(0.3 0.07 255 / 30%);
+  --shadow-glow: 0 0 24px -4px oklch(0.48 0.1 255 / 45%);
+  --shadow-glow-blue: 0 0 22px -4px oklch(0.48 0.1 255 / 35%);
+  --chart-1: oklch(0.48 0.1 255);
+  --chart-2: oklch(0.3 0.07 255);
+  --chart-3: oklch(0.55 0.11 80);
+  --chart-4: oklch(0.88 0.07 90);
+  --chart-5: oklch(0.42 0.05 255);
+  --sidebar: oklch(0.96 0.015 90);
+  --sidebar-foreground: oklch(0.3 0.07 255);
+  --sidebar-primary: oklch(0.48 0.1 255);
+  --sidebar-primary-foreground: oklch(0.93 0.05 90);
+  --sidebar-accent: oklch(0.92 0.03 90);
+  --sidebar-accent-foreground: oklch(0.3 0.07 255);
+  --sidebar-border: oklch(0.86 0.02 250);
+  --sidebar-ring: oklch(0.48 0.1 255);
+  /* License-plate logo colors (colonial blue plate, buff lettering) */
+  --plate-bg: oklch(0.42 0.09 255);
+  --plate-text: oklch(0.88 0.07 90);
+  --plate-ring: oklch(0.88 0.07 90 / 35%);
+}
+
+/* On dark colonial-blue panels in light mode, orange accents flip to buff
+ * so they stay readable (blue-on-blue would vanish). */
+.light .bg-navy .text-orange { color: var(--cream); }
+.light .bg-navy .bg-orange { background-color: var(--cream); }
+.light .bg-navy .text-orange-foreground { color: var(--navy-deep); }
+.light .bg-navy .decoration-orange { text-decoration-color: var(--cream); }
+.light .bg-navy .fill-orange { fill: var(--cream); }
 
 @layer base {
   * { border-color: var(--color-border); }
@@ -152,4 +220,4 @@
 }
 @utility ai-glow { box-shadow: var(--shadow-glow); }
 @utility ai-glow-blue { box-shadow: var(--shadow-glow-blue); }
-@utility ai-text { background: linear-gradient(90deg, var(--orange), oklch(0.96 0.02 95)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility ai-text { background: linear-gradient(90deg, var(--orange), var(--foreground)); -webkit-background-clip: text; background-clip: text; color: transparent; }

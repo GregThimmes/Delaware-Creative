@@ -2,18 +2,19 @@ import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { Menu, MousePointer2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/site/theme-toggle";
 import { brand, navLinks } from "@/lib/site-content";
 
 export function Logo({ light = false }: { light?: boolean }) {
-  return <span aria-label={`${brand.name} — Delaware black tag`} role="img" className={`relative inline-flex h-[52px] w-[178px] flex-col items-center justify-center gap-[3px] rounded-[8px] bg-black px-3 py-1 ring-1 ring-cream/15 ${light ? "" : "ai-glow"}`}>
-    <span aria-hidden="true" className="absolute left-2 top-[4px] h-[3px] w-[10px] rounded-full bg-cream/80" />
-    <span aria-hidden="true" className="absolute right-2 top-[4px] h-[3px] w-[10px] rounded-full bg-cream/80" />
-    <span aria-hidden="true" className="absolute bottom-[4px] left-2 h-[3px] w-[10px] rounded-full bg-cream/80" />
-    <span aria-hidden="true" className="absolute bottom-[4px] right-2 h-[3px] w-[10px] rounded-full bg-cream/80" />
-    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.26em] text-cream">The First State</span>
-    <span aria-hidden="true" className="font-plate text-[23px] font-bold uppercase leading-none tracking-tight text-cream">302<span className="normal-case">SiteKick</span></span>
-    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.34em] text-cream">Delaware</span>
-    <MousePointer2 aria-hidden="true" className="absolute -bottom-2 -right-2 size-4 fill-cream text-cream" strokeWidth={2.5} />
+  return <span aria-label={`${brand.name} — Delaware license plate`} role="img" className={`relative inline-flex h-[52px] w-[178px] flex-col items-center justify-center gap-[3px] rounded-[8px] bg-(--plate-bg) px-3 py-1 ring-1 ring-(--plate-ring) ${light ? "" : "ai-glow"}`}>
+    <span aria-hidden="true" className="absolute left-2 top-[4px] h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="absolute right-2 top-[4px] h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="absolute bottom-[4px] left-2 h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="absolute bottom-[4px] right-2 h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.26em] text-(--plate-text)">The First State</span>
+    <span aria-hidden="true" className="font-plate text-[23px] font-bold uppercase leading-none tracking-tight text-(--plate-text)">302<span className="normal-case">SiteKick</span></span>
+    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.34em] text-(--plate-text)">Delaware</span>
+    <MousePointer2 aria-hidden="true" className="absolute -bottom-2 -right-2 size-4 fill-(--plate-text) text-(--plate-text)" strokeWidth={2.5} />
   </span>;
 }
 
@@ -26,6 +27,7 @@ export function Header() {
         {navLinks.map(l => <Link key={l.id} to="/" hash={l.id} className="text-sm font-semibold text-slate transition-colors hover:text-orange">{l.label}</Link>)}
       </nav>
       <div className="flex items-center gap-2">
+        <ThemeToggle />
         <Button asChild variant="kick" size="nav" className="hidden sm:inline-flex"><Link to="/get-started">Get My Website</Link></Button>
         <Button variant="ghost" size="icon" className="lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
       </div>
