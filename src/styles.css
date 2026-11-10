@@ -134,8 +134,8 @@
  * Buff owns the light surfaces, colonial blue owns text, accents and darks. */
 .light {
   color-scheme: light;
-  --navy: oklch(0.45 0.09 255);
-  --navy-deep: oklch(0.3 0.07 255);
+  --navy: oklch(0.32 0.07 255);
+  --navy-deep: oklch(0.24 0.06 255);
   --orange: oklch(0.48 0.1 255);
   --orange-foreground: oklch(0.93 0.05 90);
   --cream: oklch(0.88 0.07 90);
