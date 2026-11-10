@@ -5,13 +5,15 @@ import { Button } from "@/components/ui/button";
 import { brand, navLinks } from "@/lib/site-content";
 
 export function Logo({ light = false }: { light?: boolean }) {
-  return <span aria-label={`${brand.name} — Delaware black tag`} role="img" className={`relative inline-flex h-12 w-[150px] flex-col items-center justify-between rounded-md border-2 border-cream/80 bg-black px-2 py-0.5 shadow-[inset_0_0_0_2px_var(--navy-deep)] ${light ? "" : "ai-glow"}`}>
-    <span aria-hidden="true" className="absolute left-1.5 top-1.5 size-1 rounded-full bg-cream/60" />
-    <span aria-hidden="true" className="absolute right-1.5 top-1.5 size-1 rounded-full bg-cream/60" />
-    <span aria-hidden="true" className="font-display text-[8px] font-extrabold leading-none tracking-[0.35em] text-cream pt-0.5">DELAWARE</span>
-    <span aria-hidden="true" className="font-display text-[19px] font-extrabold leading-none tracking-tight text-orange">302<span className="text-cream">SiteKick</span></span>
-    <span aria-hidden="true" className="text-[7px] font-semibold italic leading-none tracking-wider text-cream/80 pb-0.5">The First State</span>
-    <MousePointer2 aria-hidden="true" className="absolute -right-2 -bottom-2 size-4 fill-orange text-orange" strokeWidth={2.5} />
+  return <span aria-label={`${brand.name} — Delaware black tag`} role="img" className={`relative inline-flex h-[52px] w-[178px] flex-col items-center justify-center gap-[3px] rounded-[8px] bg-black px-3 py-1 ring-1 ring-cream/15 ${light ? "" : "ai-glow"}`}>
+    <span aria-hidden="true" className="absolute left-2 top-[4px] h-[3px] w-[10px] rounded-full bg-cream/80" />
+    <span aria-hidden="true" className="absolute right-2 top-[4px] h-[3px] w-[10px] rounded-full bg-cream/80" />
+    <span aria-hidden="true" className="absolute bottom-[4px] left-2 h-[3px] w-[10px] rounded-full bg-cream/80" />
+    <span aria-hidden="true" className="absolute bottom-[4px] right-2 h-[3px] w-[10px] rounded-full bg-cream/80" />
+    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.26em] text-cream">The First State</span>
+    <span aria-hidden="true" className="font-plate text-[23px] font-bold uppercase leading-none tracking-tight text-cream">302<span className="normal-case">SiteKick</span></span>
+    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.34em] text-cream">Delaware</span>
+    <MousePointer2 aria-hidden="true" className="absolute -bottom-2 -right-2 size-4 fill-cream text-cream" strokeWidth={2.5} />
   </span>;
 }
 

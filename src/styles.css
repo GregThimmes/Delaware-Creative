@@ -38,6 +38,7 @@
   --color-slate: var(--slate);
   --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-plate: "Oswald", "Arial Narrow", ui-sans-serif, system-ui, sans-serif;
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
