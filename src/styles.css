@@ -212,4 +212,4 @@
 }
 @utility ai-glow { box-shadow: var(--shadow-glow); }
 @utility ai-glow-blue { box-shadow: var(--shadow-glow-blue); }
-@utility ai-text { background: linear-gradient(90deg, var(--orange), oklch(0.96 0.02 95)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility ai-text { background: linear-gradient(90deg, var(--orange), var(--foreground)); -webkit-background-clip: text; background-clip: text; color: transparent; }
