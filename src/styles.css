@@ -186,6 +186,14 @@
   --plate-ring: oklch(0.88 0.07 90 / 35%);
 }
 
+/* On dark colonial-blue panels in light mode, orange accents flip to buff
+ * so they stay readable (blue-on-blue would vanish). */
+.light .bg-navy .text-orange { color: var(--cream); }
+.light .bg-navy .bg-orange { background-color: var(--cream); }
+.light .bg-navy .text-orange-foreground { color: var(--navy-deep); }
+.light .bg-navy .decoration-orange { text-decoration-color: var(--cream); }
+.light .bg-navy .fill-orange { fill: var(--cream); }
+
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; scroll-padding-top: 84px; }
