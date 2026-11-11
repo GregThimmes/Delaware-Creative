@@ -14,7 +14,7 @@ export function Logo({ light = false }: { light?: boolean }) {
     <span aria-hidden="true" className="text-[6px] font-bold uppercase leading-none tracking-[0.2em] text-(--plate-text)">The First State</span>
     <span aria-hidden="true" className="font-plate text-[21px] font-bold uppercase leading-none tracking-tight text-(--plate-text)">302<span className="normal-case">SiteKick</span></span>
     <span aria-hidden="true" className="text-[6px] font-bold uppercase leading-none tracking-[0.26em] text-(--plate-text)">Delaware</span>
-    <MousePointer2 aria-hidden="true" className="absolute -bottom-1.5 -right-1.5 size-3.5 fill-(--plate-text) text-(--plate-text)" strokeWidth={2.5} />
+    <MousePointer2 aria-hidden="true" className="absolute -bottom-2.5 -right-2.5 size-3.5 fill-(--plate-text) text-(--plate-text)" strokeWidth={2.5} />
   </span>;
 }
 
