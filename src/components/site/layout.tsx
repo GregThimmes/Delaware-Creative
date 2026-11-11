@@ -6,15 +6,15 @@ import { ThemeToggle } from "@/components/site/theme-toggle";
 import { brand, navLinks } from "@/lib/site-content";
 
 export function Logo({ light = false }: { light?: boolean }) {
-  return <span aria-label={`${brand.name} — Delaware license plate`} role="img" className={`relative inline-flex h-[52px] w-[178px] flex-col items-center justify-center gap-[3px] rounded-[8px] bg-(--plate-bg) px-3 py-1 ring-1 ring-(--plate-ring) ${light ? "" : "ai-glow"}`}>
-    <span aria-hidden="true" className="absolute left-2 top-[4px] h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
-    <span aria-hidden="true" className="absolute right-2 top-[4px] h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
-    <span aria-hidden="true" className="absolute bottom-[4px] left-2 h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
-    <span aria-hidden="true" className="absolute bottom-[4px] right-2 h-[3px] w-[10px] rounded-full bg-(--plate-text) opacity-80" />
-    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.26em] text-(--plate-text)">The First State</span>
-    <span aria-hidden="true" className="font-plate text-[23px] font-bold uppercase leading-none tracking-tight text-(--plate-text)">302<span className="normal-case">SiteKick</span></span>
-    <span aria-hidden="true" className="text-[7px] font-bold uppercase leading-none tracking-[0.34em] text-(--plate-text)">Delaware</span>
-    <MousePointer2 aria-hidden="true" className="absolute -bottom-2 -right-2 size-4 fill-(--plate-text) text-(--plate-text)" strokeWidth={2.5} />
+  return <span aria-label={`${brand.name} — Delaware license plate`} role="img" className={`relative inline-flex h-[60px] w-[128px] flex-col items-center justify-center gap-[3px] rounded-[7px] bg-(--plate-bg) px-2 py-1 ring-1 ring-(--plate-ring) ${light ? "" : "ai-glow"}`}>
+    <span aria-hidden="true" className="absolute left-1.5 top-[4px] h-[3px] w-[9px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="absolute right-1.5 top-[4px] h-[3px] w-[9px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="absolute bottom-[4px] left-1.5 h-[3px] w-[9px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="absolute bottom-[4px] right-1.5 h-[3px] w-[9px] rounded-full bg-(--plate-text) opacity-80" />
+    <span aria-hidden="true" className="text-[6px] font-bold uppercase leading-none tracking-[0.2em] text-(--plate-text)">The First State</span>
+    <span aria-hidden="true" className="font-plate text-[21px] font-bold uppercase leading-none tracking-tight text-(--plate-text)">302<span className="normal-case">SiteKick</span></span>
+    <span aria-hidden="true" className="text-[6px] font-bold uppercase leading-none tracking-[0.26em] text-(--plate-text)">Delaware</span>
+    <MousePointer2 aria-hidden="true" className="absolute -bottom-2.5 -right-2.5 size-3.5 fill-(--plate-text) text-(--plate-text)" strokeWidth={2.5} />
   </span>;
 }
 
